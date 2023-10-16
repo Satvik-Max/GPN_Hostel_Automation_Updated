@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provisional Merit List</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js">
+</head>
+<style>
+</style>
+<body>
+    <div id="provisional">
+     <h1>
+        Provisional Merit List
+     </h1>
+        <table class="table table-bordered border-primary">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Branch</th>
+                <th scope="col">Cast</th>
+                <th scope="col">Percentage</th>
+                <th scope="col">Backlogs</th>
+                <th scope="col">Remark</th>
+            </tr>
+            </thead>
+        <tbody>
+            {% for student in data %}
+            <tr>
+                <td>{{ student.fno3 }}</td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.Branch }}</td>
+                <td>{{ student.cast }}</td>
+                <td>{{ student.percentage }}</td>
+                <td>{{ student.Nu_Backlog }}</td>
+                <td>{{ student.remark }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    </div>
+</body>
+</html>

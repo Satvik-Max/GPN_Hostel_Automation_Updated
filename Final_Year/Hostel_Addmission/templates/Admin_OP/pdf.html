@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <form action="{% url 'pdf' %}" enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        <label> PDF Name </label><input type="text" name="filename">
+        <label> HTML File </label><input type="file" name="htmlfile">
+        <button> Convert </button>
+      </form>
+</body>
+</html>

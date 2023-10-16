@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="{% url 'cplist2' %}" method="post">
+        {% csrf_token %}
+        <label> Provisional List 2nd Year : </label><select name="student_access">
+            <option hidden>ON</option>
+            <option>ON</option>
+            <option>OFF</option>
+        </select>
+        <button>Submit</button>
+    </form>
+</body>
+</html>

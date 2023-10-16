@@ -1,0 +1,445 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Government Polytechnic Nagpur</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link href="{% static 'img/favicon.png' %}" rel="icon">
+  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+  <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto">GPN</h1>
+      
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="{% url 'home' %}">Home</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'previewtab' %}">Preview
+          </a></li>
+          <li class="dropdown"><a href="#"><span>Student Section</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{% url 'plist11' %}">  Provisional Lists 1st year  </a></li>
+              <li><a href="{% url 'flist11' %}">  Final Lists 1st year  </a></li>
+              <li><a href="{% url 'plist22' %}">  Provisional Lists 2nd year  </a></li>
+              <li><a href="{% url 'flist22' %}">  Final Lists 2nd year  </a></li>
+              <li><a href="{% url 'plist' %}">  Provisional Lists 3rd year  </a></li>
+              <li><a href="{% url 'flist' %}">  Final Lists 3rd year  </a></li>
+              <li><a href="{% url 'imp_dates' %}"> Important Dates 3 </a></li>
+              <li><a href="{% url 'imp_dates2' %}"> Important Dates 2  </a></li>
+              <li><a href="{% url 'imp_dates1' %}"> Important Dates 1  </a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Student Registration</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="{% url 'First_year' %}">1<sup>st</sup>Year Students </a></li>
+                <li><a href="{% url 'S_view1' %}">              VIEW </a></li>
+                <li><a href="{% url 'Second_year' %}">2<sup>nd</sup>Year Students </a></li>
+                <li><a href="{% url 'S_view2' %}">              VIEW </a></li>
+                <li><a href="{% url 'Second_year_Mining' %}">2<sup>nd</sup>Year Mining Students </a></li>
+                <li><a href="{% url 'Third_year' %}">3<sup>rd</sup>Year Students </a></li>
+                <li><a href="{% url 'S_view' %}"> VIEW </a></li>
+                <li><a href="{% url 'Third_year_Mining' %}">3<sup>rd</sup>Year Mining Students </a></li>
+              </ul>
+          </li>
+        </ul>
+      </nav>
+      <i class="bi mobile-nav-toggle bi-list"></i>
+      <div class="social-links">
+        <a href="{% url 'admin_log' %}" class="Admin"><img src="{% static 'img/person-circle.svg' %}" alt="Admin"></a>
+      </div>
+
+    </div>
+  </header>
+
+  <section id="hero" class="clearfix">
+    <div class="container d-flex h-100">
+      <div class="row justify-content-center align-self-center" data-aos="fade-up">
+        <div class="col-lg-6 intro-info order-lg-first order-last" data-aos="zoom-in" data-aos-delay="100">
+          <h2>Take Step<br>Toward Your <span>Success!</span></h2>
+          <h5>GPN Hostel Addmission</h5>
+          <div>
+            <a href="#about" class="btn-get-started scrollto">Get Started</a>
+          </div>
+        </div>
+
+        <div class="col-lg-6 intro-img order-lg-last order-first" data-aos="zoom-out" data-aos-delay="200">
+          <img src="{% static 'img/intro-img.svg' %}" alt="" class="img-fluid">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="testimonials" class="testimonials">
+    <div class="container aos-init aos-animate" data-aos="zoom-in">
+
+      <header class="section-header">
+        <h3> Important Reviews  </h3>
+      </header>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+
+          <div class="testimonials-slider swiper swiper-initialized swiper-horizontal swiper-pointer-events aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+            <div class="swiper-wrapper" id="swiper-wrapper-db10a23faeddc0eb3" aria-live="off" style="transition-duration: 0ms; transform: translate3d(-2704.15px, 0px, 0px);"><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" role="group" aria-label="1 / 4">
+                <div class="testimonial-item">
+                  <img src="{% static 'img/testimonial-1.jpg' %}" class="testimonial-img" alt="">
+                  <h3>Saul Goodman</h3>
+                  <h4>Ceo &amp; Founder</h4>
+                  <p>
+                    Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                  </p>
+                </div>
+              </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1" role="group" aria-label="2 / 4">
+                <div class="testimonial-item">
+                  <img src="{% static 'img/testimonial-2.jpg' %}" class="testimonial-img" alt="">
+                  <h3>Sara Wilsson</h3>
+                  <h4>Designer</h4>
+                  <p>
+                    Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                  </p>
+                </div>
+              </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="2" role="group" aria-label="3 / 4">
+                <div class="testimonial-item">
+                  <img src="{% static 'img/testimonial-3.jpg' %}" class="testimonial-img" alt="">
+                  <h3>Jena Karlis</h3>
+                  <h4>Store Owner</h4>
+                  <p>
+                    Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                  </p>
+                </div>
+              </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="3" role="group" aria-label="4 / 4">
+                <div class="testimonial-item">
+                  <img src="{% static 'img/testimonial-4.jpg' %}" class="testimonial-img" alt="">
+                  <h3>Matt Brandon</h3>
+                  <h4>Freelancer</h4>
+                  <p>
+                    Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                  </p>
+                </div>
+              </div>
+
+              <div class="swiper-slide swiper-slide-duplicate-next" data-swiper-slide-index="0" role="group" aria-label="1 / 4">
+                <div class="testimonial-item">
+                  <img src="{% static 'img/testimonial-1.jpg' %}" class="testimonial-img" alt="">
+                  <h3>Saul Goodman</h3>
+                  <h4>Ceo &amp; Founder</h4>
+                  <p>
+                    Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                  </p>
+                </div>
+              </div>
+
+              <div class="swiper-slide" data-swiper-slide-index="1" role="group" aria-label="2 / 4">
+                <div class="testimonial-item">
+                  <img src="{% static 'img/testimonial-2.jpg' %}" class="testimonial-img" alt="">
+                  <h3>Sara Wilsson</h3>
+                  <h4>Designer</h4>
+                  <p>
+                    Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                  </p>
+                </div>
+              </div>
+
+              <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="2" role="group" aria-label="3 / 4">
+                <div class="testimonial-item">
+                  <img src="{% static 'img/testimonial-3.jpg' %}" class="testimonial-img" alt="">
+                  <h3>Jena Karlis</h3>
+                  <h4>Store Owner</h4>
+                  <p>
+                    Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                  </p>
+                </div>
+              </div>
+
+              <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="3" role="group" aria-label="4 / 4">
+                <div class="testimonial-item">
+                  <img src="{% static 'img/testimonial-4.jpg' %}" class="testimonial-img" alt="">
+                  <h3>Matt Brandon</h3>
+                  <h4>Freelancer</h4>
+                  <p>
+                    Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                  </p>
+                </div>
+              </div>
+
+            <div class="swiper-slide swiper-slide-duplicate swiper-slide-next" data-swiper-slide-index="0" role="group" aria-label="1 / 4">
+                <div class="testimonial-item">
+                  <img src="{% static 'img/testimonial-1.jpg' %}" class="testimonial-img" alt="">
+                  <h3>Saul Goodman</h3>
+                  <h4>Ceo &amp; Founder</h4>
+                  <p>
+                    Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                  </p>
+                </div>
+              </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1" role="group" aria-label="2 / 4">
+                <div class="testimonial-item">
+                  <img src="{% static 'img/testimonial-2.jpg' %}" class="testimonial-img" alt="">
+                  <h3>Sara Wilsson</h3>
+                  <h4>Designer</h4>
+                  <p>
+                    Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                  </p>
+                </div>
+              </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="2" role="group" aria-label="3 / 4">
+                <div class="testimonial-item">
+                  <img src="{% static 'img/testimonial-3.jpg' %}" class="testimonial-img" alt="">
+                  <h3>Jena Karlis</h3>
+                  <h4>Store Owner</h4>
+                  <p>
+                    Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                  </p>
+                </div>
+              </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="3" role="group" aria-label="4 / 4">
+                <div class="testimonial-item">
+                  <img src="{% static 'img/testimonial-4.jpg' %}" class="testimonial-img" alt="">
+                  <h3>Matt Brandon</h3>
+                  <h4>Freelancer</h4>
+                  <p>
+                    Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                  </p>
+                </div>
+              </div></div>
+            <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 4" aria-current="true"></span></div>
+          <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <main id="main">
+    <section id="services" class="services section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h3>Services</h3>
+          <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus.</p>
+        </header>
+
+        <div class="row g-5">
+
+          <div class="col-md-6 col-lg-4 wow bounceInUp" data-aos="zoom-in" data-aos-delay="100">
+            <div class="box">
+              <div class="icon" style="background: #fceef3;"><i class="bi bi-briefcase" style="color: #ff689b;"></i></div>
+              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="box">
+              <div class="icon" style="background: #fff0da;"><i class="bi bi-card-checklist" style="color: #e98e06;"></i></div>
+              <h4 class="title"><a href="">Dolor Sitema</a></h4>
+              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="box">
+              <div class="icon" style="background: #e6fdfc;"><i class="bi bi-bar-chart" style="color: #3fcdc7;"></i></div>
+              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+            </div>
+          </div>   
+      </div>
+      </div>
+    <section id="team" class="team section-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h3> Our Staff </h3>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="member">
+              <img src="{% static 'img/team-1.jpg' %}" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Walter White</h4>
+                  <span>Chief Executive Officer</span>
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="member">
+              <img src="{% static 'img/team-2.jpg' %}" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Sarah Jhonson</h4>
+                  <span>Product Manager</span>
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="member">
+              <img src="{% static 'img/team-3.jpg' %}" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>William Anderson</h4>
+                  <span>CTO</span>
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="member">
+              <img src="{% static 'img/team-4.jpg' %}" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Amanda Jepson</h4>
+                  <span>Accountant</span>
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <section id="pricing" class="pricing section-bg wow fadeInUp">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h3>Pricing</h3>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </header>
+
+        <div class="row flex-items-xs-middle flex-items-xs-center">
+
+          <div class="col-xs-12 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card">
+              <div class="card-header">
+                <h3><span class="currency">$</span>19<span class="period">/month</span></h3>
+              </div>
+              <div class="card-block">
+                <h4 class="card-title">
+                  Basic Plan
+                </h4>
+                <ul class="list-group">
+                  <li class="list-group-item">Odio animi voluptates</li>
+                  <li class="list-group-item">Inventore quisquam et</li>
+                  <li class="list-group-item">Et perspiciatis suscipit</li>
+                  <li class="list-group-item">24/7 Support System</li>
+                </ul>
+                <a href="#" class="btn">Choose Plan</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card">
+              <div class="card-header">
+                <h3><span class="currency">$</span>29<span class="period">/month</span></h3>
+              </div>
+              <div class="card-block">
+                <h4 class="card-title">
+                  Regular Plan
+                </h4>
+                <ul class="list-group">
+                  <li class="list-group-item">Odio animi voluptates</li>
+                  <li class="list-group-item">Inventore quisquam et</li>
+                  <li class="list-group-item">Et perspiciatis suscipit</li>
+                  <li class="list-group-item">24/7 Support System</li>
+                </ul>
+                <a href="#" class="btn">Choose Plan</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card">
+              <div class="card-header">
+                <h3><span class="currency">$</span>39<span class="period">/month</span></h3>
+              </div>
+              <div class="card-block">
+                <h4 class="card-title">
+                  Premium Plan
+                </h4>
+                <ul class="list-group">
+                  <li class="list-group-item">Odio animi voluptates</li>
+                  <li class="list-group-item">Inventore quisquam et</li>
+                  <li class="list-group-item">Et perspiciatis suscipit</li>
+                  <li class="list-group-item">24/7 Support System</li>
+                </ul>
+                <a href="#" class="btn">Choose Plan</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    <div class="container" align="center" style="margin-top: 10%;">
+      <div class="copyright">
+        &copy; Copyright <strong>Satvik</strong> All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by Group_5 
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>

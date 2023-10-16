@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final_list</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js">
+</head>
+<body>
+    <h1>
+        Final Merit List 
+    </h1>
+    <table class="table table-bordered border-primary">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Branch</th>
+                <th scope="col">Cast</th>
+                <th scope="col">Percentage</th>
+                <th scope="col">Seat</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{ student.name }}</td>
+                <td>{{ student.Branch }}</td>
+                <td>{{ student.cast }}</td>
+                <td>{{ student.percentage }}</td>
+                <td>
+                    {% if student.name in Allocated_students %}
+                        {% for key, value in student_seat.items %}
+                            {% if key == student.name %}
+                                {{ value }}
+                            {% endif %}
+                        {% endfor %}
+                    {% else %}
+                        Awaited
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+</body>
+</html>

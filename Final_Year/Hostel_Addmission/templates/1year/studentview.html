@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js">
+</head>
+<style>
+    .resized-image {
+    max-width: 50%;  
+    max-height: 150px; 
+}
+</style>
+<body>
+    <div id="htmlContent">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-center">
+                    Government Polytechnic Nagpur
+                </h3>
+                <p class="text-center">
+                    ( An Autonomous Institute of Government of Maharashtra )
+                </p>
+                <h3 class="text-center">
+                    Hostel Addmission Form
+                </h3>
+                <div class="shadow p-3 mb-5 bg-body-tertiary rounded" class="jumbotron">
+                    <h2>
+                        Student Information :
+                    </h2>
+                </div>
+                <div>
+                    <div class="shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                        ID  : {{s.fno1}} <br>
+                        Name : {{s.name}} <br>
+                        DOB : {{s.DOB}}  <br>
+                        Cast : {{s.cast}}  <br>
+                        Nation : {{s.nationality}}  <br>
+                        Blood : {{s.BGroup}}  <br>
+                        Phone : {{s.phone1}}  <br>
+                        Add : {{s.Address1}}  <br>
+                        Email : {{s.Email}}  <br>
+                        Branch : {{s.Branch}}  <br>
+                        Backlog : {{s.Backlog}}  <br>
+                        NO-Backlog : {{s.Nu_Backlog}}  <br>
+                        Percentage : {{s.percentage}}
+                    </div>
+                </div>
+            
+                <div class="shadow p-3 mb-5 bg-body-tertiary rounded" class="jumbotron">
+                    <h2>
+                        Parents Information :
+                    </h2>
+                </div>
+                <div>
+                    <div class="shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                        Name : {{s.Father_name}} <br>
+                        Phone : {{s.phone2}}  <br>
+                        Add : {{s.Address2}} 
+                    </div>
+                </div>
+                
+                <div class="shadow p-3 mb-5 bg-body-tertiary rounded" class="jumbotron">
+                    <h2>
+                        Undertakings & Signature student :
+                    </h2>
+                </div>
+                <div>
+                    <div class="shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                    <pre>
+                    adipisicing elit. Natus iusto cupiditate voluptatem consequatur 
+                    ipsum dicta voluptas sint ratione, eius est deserunt sunt veritatis 
+                    maiores modi quae animi asperiores. Repudiandae, ipsam.sit amet 
+                    consectetur adipisicing elit. Fuga in, voluptatibus culpa nam aliquid 
+                    ipsum delectus iste excepturi iusto deserunt!
+
+                    <img src="{{ s.student_signature.url }}" class="rounded resized-image" />  
+                </pre>            
+                <h4 style="margin-left: 15%;">Student Signature</h4>
+                    </div>
+                </div>
+            
+                <div class="shadow p-3 mb-5 bg-body-tertiary rounded" class="jumbotron">
+                    <h2>
+                        Undertakings & Signature parents :
+                    </h2>
+                </div>
+                <div>
+                    <div class="shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                    <pre>
+                    adipisicing elit. Natus iusto cupiditate voluptatem consequatur 
+                    ipsum dicta voluptas sint ratione, eius est deserunt sunt veritatis 
+                    maiores modi quae animi asperiores. Repudiandae, ipsam.sit amet 
+                    consectetur adipisicing elit. Fuga in, voluptatibus culpa nam aliquid 
+                    ipsum delectus iste excepturi iusto deserunt!
+
+                    <img src="{{ s.father_signature.url }}" class="rounded resized-image" />  
+                </pre>            
+                <h4 style="margin-left: 15%;">Parents Signature</h4>
+                </div>
+                </div>
+                <div class="shadow p-3 mb-5 bg-body-tertiary rounded" class="jumbotron">
+                    <h2>
+                        Marksheet 1 :
+                    </h2>
+                </div>
+                <div>
+                    <div class="shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                    <pre>
+                    <img src="{{ s.marksheet1.url }}" class="rounded resized-image" />  
+                </pre>
+                </div>
+                </div>
+                <div class="shadow p-3 mb-5 bg-body-tertiary rounded" class="jumbotron">
+                    <h2>
+                        Marksheet 2 :
+                    </h2>
+                </div>
+                <div>
+                    <div class="shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                    <pre>
+                    <img src="{{ s.marksheet2.url }}" class="rounded resized-image" />  
+                </pre>
+                </div>
+                </div>
+                <div class="shadow p-3 mb-5 bg-body-tertiary rounded" class="jumbotron">
+                    <h2>
+                        Domacile :
+                    </h2>
+                </div>
+                <div>
+                    <div class="shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                    <pre>
+                    <img src="{{ s.Domacile.url }}" class="rounded resized-image" />  
+                </pre>
+                </div>
+                </div>
+                <div class="shadow p-3 mb-5 bg-body-tertiary rounded" class="jumbotron">
+                    <h2>
+                        Allotment Letter :
+                    </h2>
+                </div>
+                <div>
+                    <div class="shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                    <pre>
+                    <img src="{{ s.Allotment.url }}" class="rounded resized-image" />  
+                </pre>
+                </div>
+                </div>
+                <div class="shadow p-3 mb-5 bg-body-tertiary rounded" class="jumbotron">
+                    <h2>
+                        Addmission Receipt :
+                    </h2>
+                </div>
+                <div>
+                    <div class="shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                    <pre>
+                    <img src="{{ s.Addmission.url }}" class="rounded resized-image" />  
+                </pre>
+                </div>
+                </div>
+                <div class="shadow p-3 mb-5 bg-body-tertiary rounded" class="jumbotron">
+                    <h2>
+                        Course Registration Receipt :
+                    </h2>
+                </div>
+                <div>
+                    <div class="shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                    <pre>
+                    <img src="{{ s.Registration.url }}" class="rounded resized-image" />  
+                </pre>
+                </div>
+                </div>
+
+    </div>
+    </div>
+    </div>
+</div>
+</body>
+</html>

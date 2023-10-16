@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .doc{
+        display: flex;
+        flex-direction: column;
+        gap: 3%;
+    }
+</style>
+<body>
+
+    <h2> First Year Students </h2>
+
+    <form action="{% url 'First_year' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <label> Name : </label><input type="text" name="name">
+        <label> DOB : </label><input type="date" name="DOB">
+        <label>Cast : </label><select name="cast">
+            <option hidden>Cast</option>
+            <option>SC</option>
+            <option>OBC</option>
+            <option>NT</option>
+            <option>ST</option>
+            <option>OPEN</option>
+        </select>
+
+        <label>Nationality : </label><input type="text" name="nation">
+        <label>Blood Group : </label><input type="text" name="Bgroup">
+        <label>Phone NO : </label><input type="number" name="Number">
+        <label>Address : </label><input type="text" name="add">
+        <label>Email : </label><input type="email" name="email">
+        <label>Branch : </label><select name="Branch">
+            <option hidden>Branch</option>
+            <option>Information Technology</option>
+            <option>Artificial Intelligence</option>
+            <option>computer</option>
+            <option>mechanical</option>
+            <option>civil</option>
+            <option>textile</option>
+            <option>Electronics</option>
+            <option>Electrical</option>
+            <option>Mechatronics</option>
+            <option>Mining</option>
+        </select>
+        <div class="per">
+        <h5> Class 10 </h5>
+        <label>Obtained Marks :</label><input type="number" name="Obtained1">
+        <label>Total Marks :</label><input type="number" name="Total1">
+        </div>
+
+        <h2> Parent's Data </h2>
+
+        <label> Name : </label><input type="text" name="fname">
+        <label>Phone NO : </label><input type="number" name="fPhone">
+        <label>Address : </label><input type="text" name="fAddress">
+
+        <h2> Undertaking's </h2>
+
+        <pre>
+            adipisicing elit. Natus iusto cupiditate voluptatem consequatur 
+            ipsum dicta voluptas sint ratione, eius est deserunt sunt veritatis 
+            maiores modi quae animi asperiores. Repudiandae, ipsam.sit amet 
+            consectetur adipisicing elit. Fuga in, voluptatibus culpa nam aliquid 
+            ipsum delectus iste excepturi iusto deserunt!</pre>
+        <input type="checkbox" required>
+        <label class="form-check-label" for="invalidCheck">
+            Agree to terms and conditions
+        </label>
+
+        <pre>
+            adipisicing elit. Natus iusto cupiditate voluptatem consequatur 
+            ipsum dicta voluptas sint ratione, eius est deserunt sunt veritatis 
+            maiores modi quae animi asperiores. Repudiandae, ipsam.sit amet 
+            consectetur adipisicing elit. Fuga in, voluptatibus culpa nam aliquid 
+            ipsum delectus iste excepturi iusto deserunt!</pre>
+        <input type="checkbox" required>
+        <label class="form-check-label" for="invalidCheck">
+            Agree to terms and conditions
+        </label>
+
+        <h2> Documents </h2>
+         <div class="doc">
+            <label> Your Signature  </label><input type="file" name="Signature">
+            <label> Fther's Signature  </label><input type="file" name="fSignature">
+            <label> 10th Marksheet  </label><input type="file" name="Marksheet2">
+            <label> Allotment Later</label><input type="file" name="Allotment">
+            <label> Domacile  </label><input type="file" name="Domacile">
+            <label> Addmission Receipt  </label><input type="file" name="Addmission">
+            <label> Registration Receipt </label><input type="file" name="Registration">
+         </div>
+
+         <h2> Recheack Form </h2>
+
+         <input type="checkbox" required>
+        <label>
+            I've Recheacked the Form 
+        </label>
+
+        <button> Submit </button>
+
+    </form>
+
+    <label>  GOVERNMENT POLYTECHNIC NAGPUR </label>
+
+</body>
+{% if msg %}
+<script>
+    alert("{{ msg }}");
+</script>
+{% endif %}
+</html>
