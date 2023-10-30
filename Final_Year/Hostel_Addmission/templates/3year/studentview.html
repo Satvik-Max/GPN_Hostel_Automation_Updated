@@ -14,7 +14,7 @@
 }
 </style>
 <body>
-    <div id="htmlContent">
+    <div id="preview">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -178,27 +178,9 @@
     </div>
     </div>
     </div>
+    </div>
 </div>
-    <button onclick="generatePDF()">download</button>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <script type="text/javascript">
-        var doc = new jsPDF();
-        var specialElementHandlers = {
-            '#editor': function (element, renderer) {
-                return true;
-            }
-        };
-         
-         
-        $('#generatePDF').click(function () {
-            doc.fromHTML($('#htmlContent').html(), 30, 30, {
-                'width': 1000,
-                'height':500,
-                'elementHandlers': specialElementHandlers
-            });
-            doc.save('sample_file.pdf');
-        });
-    </script>
+  <a href="{% url 'printf' s.fno3 %}"><button style="margin-bottom: 2%;align-items: center;"> Print </button>
+  </a>
 </body>
 </html>

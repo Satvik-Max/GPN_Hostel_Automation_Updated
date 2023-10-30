@@ -11,9 +11,10 @@ import os
 from email.message import EmailMessage
 import ssl
 import smtplib
-import pdfkit
-import tempfile
-import shutil
+from reportlab.pdfgen import canvas
+from reportlab.lib.pagesizes import letter
+from django.core.files.storage import FileSystemStorage
+from io import BytesIO
 
 file_path = os.path.join(settings.BASE_DIR, 'Hostel_Addmission\\templates\\ext_file\\close.txt')
 file_path2 = os.path.join(settings.BASE_DIR, 'Hostel_Addmission\\templates\\ext_file\\impdates.txt')
@@ -33,10 +34,11 @@ def important_dates(request):
     print("lines", lines)
     p3 = lines[0]
     f3 = lines[1]
-    acc = lines[6].strip()  
-    print(lines[6], type(acc))
+    ED = lines[2]
+    SD = lines[3]
+    acc = lines[13].strip()  
     if acc == "ON":
-        return render(request, 'studates/dates.html', {'p3': p3, 'f3': f3})
+        return render(request, 'studates/dates.html', {'p3': p3, 'f3': f3 ,'ED': ED, 'SD': SD})
     else:
         return HttpResponse('Link Disabled For Now')
 
@@ -44,22 +46,26 @@ def important_dates(request):
 def important_dates2(request):
     with open(file_path2, 'r') as file:
         lines = file.readlines()
-    p3 = lines[2]
-    f3 = lines[3]
-    acc = lines[7].strip()  
+    p3 = lines[4]
+    f3 = lines[5]
+    ED = lines[6]
+    SD = lines[7]
+    acc = lines[14].strip()  
     if acc == "ON":
-        return render(request, 'studates/date2.html', {'p3': p3, 'f3': f3})
+        return render(request, 'studates/date2.html', {'p3': p3, 'f3': f3 ,'ED': ED, 'SD': SD})
     else:
         return HttpResponse('Link Disabled For Now')
 
 def important_dates1(request):
     with open(file_path2, 'r') as file:
         lines = file.readlines()
-    p3 = lines[4]
-    f3 = lines[5]
-    acc = lines[8].strip()  
+    p3 = lines[8]
+    f3 = lines[9]
+    ED = lines[10]
+    SD = lines[11]
+    acc = lines[15].strip()  
     if acc == "ON":
-        return render(request, 'studates/dates1.html', {'p3': p3, 'f3': f3})
+        return render(request, 'studates/dates1.html', {'p3': p3, 'f3': f3 ,'ED': ED, 'SD': SD})
     else:
         return HttpResponse('Link Disabled For Now')
 
@@ -69,13 +75,13 @@ def close_impdates3(request):
         if decide == 'OFF':
             with open(file_path2, 'r+') as file:
                 lines = file.readlines()
-                lines[6] = "OFF\n"
+                lines[13] = "OFF\n"
                 file.seek(0)
                 file.writelines(lines)
         if decide == 'ON':
             with open(file_path2, 'r+') as file:
                 lines = file.readlines()
-                lines[6] = "ON\n"
+                lines[13] = "ON\n"
                 file.seek(0)
                 file.writelines(lines)
     return render(request , 'Admin_OP\closeimdates.html\cimp3.html')
@@ -86,13 +92,13 @@ def close_impdates2(request):
         if decide == 'OFF':
             with open(file_path2, 'r+') as file:
                 lines = file.readlines()
-                lines[7] = "OFF\n"
+                lines[14] = "OFF\n"
                 file.seek(0)
                 file.writelines(lines)
         if decide == 'ON':
             with open(file_path2, 'r+') as file:
                 lines = file.readlines()
-                lines[7] = "ON\n"
+                lines[14] = "ON\n"
                 file.seek(0)
                 file.writelines(lines)
     return render(request , 'Admin_OP\closeimdates.html\cimp2.html')
@@ -103,13 +109,13 @@ def close_impdates1(request):
         if decide == 'OFF':
             with open(file_path2, 'r+') as file:
                 lines = file.readlines()
-                lines[8] = "OFF\n"
+                lines[15] = "OFF\n"
                 file.seek(0)
                 file.writelines(lines)
         if decide == 'ON':
             with open(file_path2, 'r+') as file:
                 lines = file.readlines()
-                lines[8] = "ON\n"
+                lines[15] = "ON\n"
                 file.seek(0)
                 file.writelines(lines)
     return render(request , 'Admin_OP\closeimdates.html\cimp1.html')
@@ -334,27 +340,35 @@ def flistUP1(request):
         s.save()      
     return render(request , 'Admin_OP/lists/flist1.html')
 
-
 def up_date(request):
     if request.method == 'POST':
         p3 = str(request.POST['p3'])
         f3 = str(request.POST['f3'])
+        ED = str(request.POST['ED'])
+        SD = str(request.POST['SD'])
         with open(file_path2, 'r+') as file:
             lines = file.readlines()
             lines[0] = p3+"\n"
             lines[1] = f3+"\n"
+            lines[2] = ED+"\n"
+            lines[3] = SD+"\n"
             file.seek(0)
             file.writelines(lines)
     return render(request,'Admin_OP/dateChange/date.html')
 
 def up_date2(request):
+    SD = 0
     if request.method == 'POST':
         p3 = str(request.POST['p3'])
         f3 = str(request.POST['f3'])
+        ED = str(request.POST['ED'])
+        SD = str(request.POST['SD'])
         with open(file_path2, 'r+') as file:
             lines = file.readlines()
-            lines[2] = p3+"\n"
-            lines[3] = f3+"\n"
+            lines[4] = p3+"\n"
+            lines[5] = f3+"\n"
+            lines[6] = ED+"\n"
+            lines[7] = SD+"\n"
             file.seek(0)
             file.writelines(lines)
     return render(request,'Admin_OP/dateChange/date2.html')
@@ -363,10 +377,15 @@ def up_date1(request):
     if request.method == 'POST':
         p3 = str(request.POST['p3'])
         f3 = str(request.POST['f3'])
+        ED = str(request.POST['ED'])
+        SD = str(request.POST['SD'])
+        print(SD)
         with open(file_path2, 'r+') as file:
             lines = file.readlines()
-            lines[4] = p3+"\n"
-            lines[5] = f3+"\n"
+            lines[8] = p3+"\n"
+            lines[9] = f3+"\n"
+            lines[10] = ED+"\n"
+            lines[11] = SD+"\n"
             file.seek(0)
             file.writelines(lines)
     return render(request,'Admin_OP/dateChange/date1.html')
@@ -1054,6 +1073,8 @@ def Third_yearmining(request):
 
                 return render(request , 'mining/year3.html' , {'msg':' Successfully '})
             return render(request , 'mining/year3.html')
+        else:
+                return HttpResponse('Form Disabled For Now')
 
 def admin_log(request):
     msg = ''
@@ -1122,7 +1143,8 @@ def Year3_report(request):
         SCseets = int(request.POST['SCseats'])
         STseets = int(request.POST['STseats'])
         NTseets = int(request.POST['NTseats'])
-        sumseats = OPENseets+OBCseets+SCseets+STseets+NTseets
+        SBCseets = int(request.POST['SBCseats'])
+        sumseats = OPENseets+OBCseets+SCseets+STseets+NTseets+SBCseets
         if tseets != sumseats:
             return HttpResponse("Invalid Seats")
         backlog_YES_students = data.filter(Backlog='YES')
@@ -1131,7 +1153,8 @@ def Year3_report(request):
             'OBC': OBCseets,
             'SC': SCseets,
             'ST': STseets,
-            'NT': NTseets
+            'NT': NTseets,
+            'SBC':SBCseets
         }
         Backlog_NO_students = sorted(backlog_NO_students ,key=lambda x:(-x.percentage))
         Backlog_Yes_students = sorted(backlog_YES_students ,key=lambda x:( x.Nu_Backlog , -x.percentage))
@@ -1177,7 +1200,8 @@ def Year2_report(request):
         SCseets = int(request.POST['SCseats'])
         STseets = int(request.POST['STseats'])
         NTseets = int(request.POST['NTseats'])
-        sumseats = OPENseets+OBCseets+SCseets+STseets+NTseets
+        SBCseets = int(request.POST['SBCseats'])
+        sumseats = OPENseets+OBCseets+SCseets+STseets+NTseets+SBCseets
         if tseets != sumseats:
             return HttpResponse("Invalid Seats")
         backlog_YES_students = data.filter(Backlog='YES')
@@ -1186,7 +1210,8 @@ def Year2_report(request):
             'OBC': OBCseets,
             'SC': SCseets,
             'ST': STseets,
-            'NT': NTseets
+            'NT': NTseets,
+            'SBC':SBCseets
         }
         Backlog_NO_students = sorted(backlog_NO_students ,key=lambda x:(-x.percentage))
         Backlog_Yes_students = sorted(backlog_YES_students ,key=lambda x:( x.Nu_Backlog , -x.percentage))
@@ -1232,7 +1257,8 @@ def Year1_report(request):
         SCseets = int(request.POST['SCseats'])
         STseets = int(request.POST['STseats'])
         NTseets = int(request.POST['NTseats'])
-        sumseats = OPENseets+OBCseets+SCseets+STseets+NTseets
+        SBCseets = int(request.POST['SBCseats'])
+        sumseats = OPENseets+OBCseets+SCseets+STseets+NTseets+SBCseets
         if tseets != sumseats:
             return HttpResponse("Invalid Seats")
         backlog_YES_students = data.filter(Backlog='YES')
@@ -1241,7 +1267,8 @@ def Year1_report(request):
             'OBC': OBCseets,
             'SC': SCseets,
             'ST': STseets,
-            'NT': NTseets
+            'NT': NTseets,
+            'SBC':SBCseets
         }
         Backlog_NO_students = sorted(backlog_NO_students ,key=lambda x:(-x.percentage))
         Backlog_Yes_students = sorted(backlog_YES_students ,key=lambda x:( x.Nu_Backlog , -x.percentage))
@@ -1365,43 +1392,181 @@ def admin_Preview1(request, fno1):
 
 
 def student_Preview(request):
-    with open(file_path , 'r') as file:
-        current_value = file.read()
-        print(current_value,type(current_value))
-    if current_value == 'ON':
         fno3 = request.session.get('fno3')
         if fno3:
             s = HostelData3.objects.get(fno3=fno3)
             return render(request, '3year\studentview.html', {'s': s})
         else:
-            return HttpResponse(" You Haven't Fill Form Yet ")
-    else:
-        return HttpResponse('Form Disabled For Now')
-    
+            return HttpResponse(" You Haven't Fill Form Yet ")    
 
 def student_Preview2(request):
-    with open(file_path4 , 'r') as file:
-        current_value = file.read()
-    if current_value == 'ON':
         fno2 = request.session.get('fno2')
         if fno2:
             s = HostelData2.objects.get(fno2=fno2)
             return render(request, '2year\studentview.html', {'s': s})
         else:
             return HttpResponse(" You Haven't Fill Form Yet ")
-    else:
-        return HttpResponse('Form Disabled For Now')
-    
-
+   
 def student_Preview1(request):
-    with open(file_path3 , 'r') as file:
-        current_value = file.read()
-    if current_value == 'ON':
         fno1 = request.session.get('fno1')
         if fno1:
             s = HostelData1.objects.get(fno1=fno1)
             return render(request, '1year\studentview.html', {'s': s})
         else:
             return HttpResponse(" You Haven't Fill Form Yet ")
-    else:
-        return HttpResponse('Form Disabled For Now')
+
+
+def printform(request, fno3):
+    s = HostelData3.objects.get(fno3=fno3)
+    data = {
+        'id': s.fno3,
+        'Name': s.name,
+        'Email': s.Email,
+        'Branch':s.Branch,
+        'DOB':s.DOB,
+        'Caste':s.cast,
+        'Nationality':s.nationality,
+        'Blood Group':s.BGroup,
+        'Phone No ':s.phone1,
+        'Address': s.Address1,
+        'Percentage':s.percentage,
+        'Backlogs':s.Nu_Backlog,
+        'Parents Name':s.Father_name,
+        'Parents Phone':s.phone2,
+        'parents Address':s.Address2
+    }
+
+    h1 = "Government Polytechnic Nagpur"
+    h2 = "An Autonomous Institute of Government of Maharashtra"
+    h3 = "Hostel Admission Form"
+
+    pdf_filename = f"{s.fno3}_student_form.pdf"
+    buffer = BytesIO()
+
+    c = canvas.Canvas(buffer, pagesize=letter)
+
+    c.setFont("Helvetica-Bold", 16)  
+    c.drawString(100, 770, h1)
+    c.setFont("Helvetica", 14)
+    c.drawString(100, 750, h2)
+    c.setFont("Helvetica-Bold", 16)
+    c.drawString(100, 730, h3)
+
+    y = 700  
+
+    for key, value in data.items():
+        c.setFont("Helvetica", 12)  
+        c.drawString(100, y, f'{key}: {value}')
+        y -= 20
+
+    c.showPage()
+    c.save()
+
+    buffer.seek(0)
+
+    response = HttpResponse(buffer, content_type='application/pdf')
+    response['Content-Disposition'] = f'inline; filename="{pdf_filename}"'
+    return response
+
+def printform2(request, fno2):
+    s = HostelData2.objects.get(fno2=fno2)
+    data = {
+        'id': s.fno2,
+        'Name': s.name,
+        'Email': s.Email,
+        'Branch':s.Branch,
+        'DOB':s.DOB,
+        'Caste':s.cast,
+        'Nationality':s.nationality,
+        'Blood Group':s.BGroup,
+        'Phone No ':s.phone1,
+        'Address': s.Address1,
+        'Percentage':s.percentage,
+        'Backlogs':s.Nu_Backlog,
+        'Parents Name':s.Father_name,
+        'Parents Phone':s.phone2,
+        'parents Address':s.Address2
+    }
+
+    h1 = "Government Polytechnic Nagpur"
+    h2 = "An Autonomous Institute of Government of Maharashtra"
+    h3 = "Hostel Admission Form"
+
+    pdf_filename = f"{s.fno2}_student_form.pdf"
+    buffer = BytesIO()
+
+    c = canvas.Canvas(buffer, pagesize=letter)
+
+    c.setFont("Helvetica-Bold", 16)  
+    c.drawString(100, 770, h1)
+    c.setFont("Helvetica", 14)
+    c.drawString(100, 750, h2)
+    c.setFont("Helvetica-Bold", 16)
+    c.drawString(100, 730, h3)
+
+    y = 700  
+
+    for key, value in data.items():
+        c.setFont("Helvetica", 12)  
+        c.drawString(100, y, f'{key}: {value}')
+        y -= 20
+
+    c.showPage()
+    c.save()
+
+    buffer.seek(0)
+
+    response = HttpResponse(buffer, content_type='application/pdf')
+    response['Content-Disposition'] = f'inline; filename="{pdf_filename}"'
+    return response
+
+def printform1(request, fno1):
+    s = HostelData1.objects.get(fno1=fno1)
+    data = {
+        'id': s.fno1,
+        'Name': s.name,
+        'Email': s.Email,
+        'Branch':s.Branch,
+        'DOB':s.DOB,
+        'Caste':s.cast,
+        'Nationality':s.nationality,
+        'Blood Group':s.BGroup,
+        'Phone No ':s.phone1,
+        'Address': s.Address1,
+        'Percentage':s.percentage,
+        'Parents Name':s.Father_name,
+        'Parents Phone':s.phone2,
+        'parents Address':s.Address2
+    }
+
+    h1 = "Government Polytechnic Nagpur"
+    h2 = "An Autonomous Institute of Government of Maharashtra"
+    h3 = "Hostel Admission Form"
+
+    pdf_filename = f"{s.fno1}_student_form.pdf"
+    buffer = BytesIO()
+
+    c = canvas.Canvas(buffer, pagesize=letter)
+
+    c.setFont("Helvetica-Bold", 16)  
+    c.drawString(100, 770, h1)
+    c.setFont("Helvetica", 14)
+    c.drawString(100, 750, h2)
+    c.setFont("Helvetica-Bold", 16)
+    c.drawString(100, 730, h3)
+
+    y = 700  
+
+    for key, value in data.items():
+        c.setFont("Helvetica", 12)  
+        c.drawString(100, y, f'{key}: {value}')
+        y -= 20
+
+    c.showPage()
+    c.save()
+
+    buffer.seek(0)
+
+    response = HttpResponse(buffer, content_type='application/pdf')
+    response['Content-Disposition'] = f'inline; filename="{pdf_filename}"'
+    return response

@@ -71,4 +71,8 @@ if student_access:
         path('cimp3/',views.close_impdates3,name='cimp33'),
         path('cimp2/',views.close_impdates2,name='cimp22'),
         path('cimp1/',views.close_impdates1,name='cimp11'),
+
+        path('printstudentform/<int:fno3>/',views.printform,name='printf'),
+        path('printstudentform2/<int:fno2>/',views.printform2,name='printf2'),
+        path('printstudentform1/<int:fno1>/',views.printform1,name='printf1'),
 ]
