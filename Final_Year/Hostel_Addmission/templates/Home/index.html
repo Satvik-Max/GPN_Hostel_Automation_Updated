@@ -1,445 +1,1264 @@
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hostel admission</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+  
+  <style>
+      .HeaderColorDiv {
+          /* background-color: #394b71; */
+          background-color: #0077b6;
+          height: 30px;
+          width: 1000px;
+          /* background-image: linear-gradient(-90deg,#000080, #0077b6, green,yellow, orange); */
+      }
+      .width1000pxdiv {
+          width: 100%;
+      }
+      .headerribbon_content {
+          width: 100%;
+      }
+      .headerribbon {
+          width: 100%;
+          background-color: #FFF;
+          display: flex;
+          flex-direction: row;
+          
+          
+      }
+      .headerribbon_title_text {
+          /* height: 100px; */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          /* float: left; */
+          font-family: Georgia;
+          font-size: min(38px, max(30px, 3vw));
+          /* font: 3vw Georgia; */
+          /* line-height: 100px; */
+          color: #281d82;
+          margin-left: 3%;
+          margin-right: 5%;
+      }
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Government Polytechnic Nagpur</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-  <link href="{% static 'img/favicon.png' %}" rel="icon">
-  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
-  <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
-  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
-  <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
-  <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
-  <link href="{% static 'css/style.css' %}" rel="stylesheet">
-</head>
-
-<body>
-
-  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
-    <div class="container d-flex align-items-center">
-
-      <h1 class="logo me-auto">GPN</h1>
+      .headerribbon_title_text span{
+        margin-left: 100px;
+        margin-top: 100px;
+      }
+      .image1{
+          margin-left: 20%;
+          padding: 10px auto;
+      }
       
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a class="nav-link scrollto active" href="{% url 'home' %}">Home</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto" href="{% url 'previewtab' %}">Preview
-          </a></li>
-          <li class="dropdown"><a href="#"><span>Student Section</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="{% url 'plist11' %}">  Provisional Lists 1st year  </a></li>
-              <li><a href="{% url 'flist11' %}">  Final Lists 1st year  </a></li>
-              <li><a href="{% url 'plist22' %}">  Provisional Lists 2nd year  </a></li>
-              <li><a href="{% url 'flist22' %}">  Final Lists 2nd year  </a></li>
-              <li><a href="{% url 'plist' %}">  Provisional Lists 3rd year  </a></li>
-              <li><a href="{% url 'flist' %}">  Final Lists 3rd year  </a></li>
-              <li><a href="{% url 'imp_dates' %}"> Important Dates 3 </a></li>
-              <li><a href="{% url 'imp_dates2' %}"> Important Dates 2  </a></li>
-              <li><a href="{% url 'imp_dates1' %}"> Important Dates 1  </a></li>
-            </ul>
-          </li>
-          <li class="dropdown"><a href="#"><span>Student Registration</span> <i class="bi bi-chevron-down"></i></a>
-              <ul>
-                <li><a href="{% url 'First_year' %}">1<sup>st</sup>Year Students </a></li>
-                <li><a href="{% url 'S_view1' %}">              VIEW </a></li>
-                <li><a href="{% url 'Second_year' %}">2<sup>nd</sup>Year Students </a></li>
-                <li><a href="{% url 'S_view2' %}">              VIEW </a></li>
-                <li><a href="{% url 'Second_year_Mining' %}">2<sup>nd</sup>Year Mining Students </a></li>
-                <li><a href="{% url 'Third_year' %}">3<sup>rd</sup>Year Students </a></li>
-                <li><a href="{% url 'S_view' %}"> VIEW </a></li>
-                <li><a href="{% url 'Third_year_Mining' %}">3<sup>rd</sup>Year Mining Students </a></li>
-              </ul>
-          </li>
-        </ul>
-      </nav>
-      <i class="bi mobile-nav-toggle bi-list"></i>
-      <div class="social-links">
-        <a href="{% url 'admin_log' %}" class="Admin"><img src="{% static 'img/person-circle.svg' %}" alt="Admin"></a>
+      .HeaderColorDiv {
+          /* background-color: #394b71; */
+          background-color: #0077b6;
+          height: 30px;
+          width: 1000px;
+          /* background-image: linear-gradient(-90deg,#000080, #0077b6, green,yellow, orange); */
+      }
+      
+      .body
+      {
+          background-image: url({% static 'img/bg1.png' %});
+      }
+      .avoidclick
+      {
+          pointer-events: none;
+      }
+      .spacediv
+      {
+          height: 70px;
+          width: 10px;
+          background: #E6E6E6;
+      }
+      
+      .btn
+      {
+          width: 135px;
+          height: 40px;
+          max-height: 40px;
+          max-width: 150px; /* border: solid 2px #b62a26;     color: #b62a26; */
+          border: solid 2px #0077B6;
+          color: #0077B6;
+          background: white;
+          border-radius: 6px;
+          cursor: pointer;
+          font-family: Calibri;
+          font-size: medium;
+          margin-right: 20px;
+          padding: 8px;
+      }
+      
+      .btn:hover
+      {
+          border: solid 2px white;
+          color: white; /*background: #b62a26;*/
+          background: #0077B6;
+      }
+      
+      .btnclick
+      {
+          width: 100px; /*height: 25px;     max-height: 25px;     max-width: 150px;*/ /* border: solid 2px #b62a26;     color: #b62a26; */
+          border: solid 2px #0077B6;
+          color: #0077B6;
+          background: white;
+          border-radius: 6px;
+          cursor: pointer;
+          font-family: Calibri;
+          font-size: medium;
+          margin-right: 20px;
+          padding: 2px;
+      }
+      
+      .btnclick:hover
+      {
+          border: solid 2px white;
+          color: white; /*background: #b62a26;*/
+          background: #0077B6;
+      }
+      
+      
+        
+      .hplinkhome
+      {
+          color: white;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 15px;
+          position: relative;
+      }
+      
+      .hplinkhome:hover
+      {
+          color: yellow;
+      }
+     
+
+      .headingdivupdate
+      {
+          /*background:#b62a26;*/ /*background:#73D674;*/ /*background: #0074b3;*/
+          background: white; /*color: White;*/
+          color: black; /*color:#145B9B;*/
+          font-size: min(max(1.4vw, 12px), 16px);
+          font-family: Calibri;
+          margin: 3px;
+          border: 2px solid #00A4BE;
+          font-weight: bold;
+          border-radius: 6px;
+          text-align: justify;
+          padding-left: 20px;
+          padding-right: 20px; 
+       max-height:250px;
+      
+      }
+      .headingdiv
+      {
+          text-align: center; /*background:#b62a26;*/ /*background:#73D674;*/
+          background: #0074b3;
+          color: White; /*color:#145B9B;*/
+          font-size: large;
+          font-family: Calibri;
+          margin: 3px;
+          border: 2px solid #00A4BE;
+          font-weight: bold;
+          border-radius: 6px;
+      }
+      .centermsgdiv
+      {
+          width: 1000px;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          font-family: Calibri;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          background-color: white;
+          font-size: medium;
+          font-weight: bold;
+          max-height: 70px;
+          border-radius: 6px;
+          border: 1px solid #0077b6;
+      }
+
+      .hoverdiv
+      {
+          font-family: Calibri;
+          text-align: center;
+          color: #b62a26;
+          margin-top: 3px;
+          margin-bottom: 3px;
+          font-weight: bold;
+          position: relative;
+          text-decoration: none;
+      }
+      .hoverdivbar
+      {
+          font-family: Calibri;
+          text-align: center;
+          color: #0077b6;
+          margin-top: 3px;
+          margin-bottom: 3px;
+          font-weight: bold;
+          position: relative;
+          text-decoration: none;
+      }
+    
+
+      
+  
+      
+      
+      
+      .HeaderColorDiv
+      {
+          /*background-color:#394b71;*/
+          background-color: #0077b6;
+          height: 30px;
+          width: 1000px; /*background-image: linear-gradient(-90deg,#000080, #0077b6, green,yellow, orange);*/
+      }
+     
+      .MenuItemDivbar
+      {
+          width: 243px;
+          float: left;
+          text-align: center;
+          margin-right: 10px;
+          background: white;
+          font-family: Calibri;
+          color: #0077b6;
+          font-weight: bold;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          position: relative; /*pointer-events: none;*/
+      }
+      .MenuItemDivbar:hover .NotificationSpan
+      {
+          /*If you hover over the help icon, show the help_popup span*/
+          display: block;
+      }
+      .MenuItemLastDivbar
+      {
+          width: 240px;
+          float: left;
+          text-align: center;
+          background: white;
+          font-family: Calibri;
+          color: #0077b6;
+          font-weight: bold;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          position: relative;
+      }
+      
+      .MenuItemLastDivbar:hover .NotificationSpan
+      {
+          /*If you hover over the help icon, show the help_popup span*/
+          display: block;
+      }
+      
+      .MenuItemDivHome
+      {
+          width: 240px;
+          float: left; /*text-align: center;*/
+          border-bottom-color: #e6e6e6; /*border-bottom-color:#FFD700;*/
+          border-bottom-style: solid;
+          margin-left: 15px;
+          margin-right: 10px;
+          background: white;
+          font-family: Calibri; /*color:#b62a26;*/
+          color: #0077b6;
+          font-weight: bold;
+          padding-top: 5px;
+          padding-bottom: 5px; /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+          position: relative;
+          top: 1px;
+          left: -1px;
+          border-bottom-style: solid; /*border-bottom-color: inherit;*/
+          border-bottom-width: medium;
+      }
+      
+      .MenuItemDivHome:hover .NotificationSpan
+      {
+          /*If you hover over the help icon, show the help_popup span*/
+          display: block;
+          left: 100px;
+      }
+      
+      .MenuItemDivHomeLast
+      {
+          width: 240px;
+          float: left; /*text-align: center;*/
+          margin-left: 15px;
+          margin-right: 10px;
+          background: white;
+          font-family: Calibri; /*color:#b62a26;*/
+          color: #0077b6;
+          font-weight: bold;
+          padding-top: 5px;
+          padding-bottom: 5px; /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+          position: relative;
+          top: 1px;
+          left: -1px;
+      }
+      
+      .MenuItemDivHomeLast:hover .NotificationSpan
+      {
+          /*If you hover over the help icon, show the help_popup span*/
+          display: block;
+          left: 100px;
+      }
+      
+      .MenuItemDiv
+      {
+          width: 240px;
+          float: left; /*text-align: center;*/
+          margin-left: 15px;
+          margin-right: 10px;
+          background: white;
+          font-family: Calibri; /*color:#b62a26;*/
+          color: #0077b6;
+          font-weight: bold;
+          padding-top: 5px;
+          padding-bottom: 5px; /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+          position: relative;
+      }
+      
+      .MenuItemLastDiv
+      {
+          width: 240px;
+          float: left;
+          text-align: center;
+          background: white;
+          font-family: Calibri;
+          color: #b62a26;
+          font-weight: bold;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          position: relative;
+      }
+      
+      .MenuItemDiv:hover .NotificationSpan
+      {
+          /*If you hover over the help icon, show the help_popup span*/
+          display: block;
+          left: 100px;
+      }
+ 
+      .MenuItemLastDiv:hover .NotificationSpan
+      {
+          /*If you hover over the help icon, show the help_popup span*/
+          display: block;
+      }
+      
+      .NotificationSpan
+      {
+          /*Normally, hide this span*/
+          display: none;
+          position: absolute;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          color: red;
+          width: 240px; /*text-align: center;*/
+          top: 30px;
+          background: white;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          z-index: 99; /*360px; is around the position I want*/
+      }
+      
+      .MenuSubitemHome
+      {
+          text-decoration: none;
+          line-height: 30px; /*color:#b62a26;*/ /*color:#8CC739;*/
+          color: #628b27;
+          width: 240px;
+          float: left;
+          margin-left: 10px;
+      }
+
+
+      
+      .MenuSubitem
+      {
+          text-decoration: none;
+          line-height: 20px; /*color:#b62a26;*/ /*color:#8CC739;*/ /*color: #628b27;*/
+          color: #0077b6;
+          width: 240px;
+          float: left;
+          cursor: pointer; /*leftbar*/
+          border-radius: 10px;
+          -webkit-border-radius: 10px;
+          -moz-border-radius: 10px;
+          vertical-align: middle;
+          text-align: center;
+          font-weight: normal;
+          padding-top: 5px;
+          padding-bottom: 5px;
+      }
+      
+
+      
+      .MenuSubitemBlue
+      {
+          text-decoration: none;
+          line-height: 30px;
+          color: Blue;
+          width: 240px;
+      }
+      
+      .MenuItemDiv:hover
+      {
+          /*color:Black;*/
+          color: #628b27;
+      }
+      
+      .MenuSubitem:hover
+      {
+          /*color:Black;*/ /*color: #628b27;*/
+          background-color: #0077b6;
+          color: yellow;
+      }
+
+      .Height5pxdiv
+      {
+          height: 5px;
+      }
+      
+      .Height10pxdiv
+      {
+          height: 10px;
+      }
+      
+      .Height20pxdiv
+      {
+          height: 20px;
+      }
+      
+      .Height30pxdiv
+      {
+          height: 30px;
+      }
+      
+      .Height40pxdiv
+      {
+          height: 40px;
+      }
+      
+      .Height50pxdiv
+      {
+          height: 50px;
+          width: 192px;
+      }
+      
+      .Height60pxdiv
+      {
+          height: 60px;
+          width: 192px;
+      }
+      
+      .width5pxdiv
+      {
+          width: 5px;
+          height: 12px;
+          float: left;
+      }
+      
+      .width10pxdiv
+      {
+          width: 10px;
+          height: 12px;
+          float: left;
+      }
+      .width20pxdiv
+      {
+          width: 20px;
+          height: 12px;
+          float: left;
+      }
+      .width1000pxdiv
+      {
+          width: 1000px;
+      
+      }
+      
+      .width1000pxdivcolornone
+      {
+          width: 1000px;
+          height: auto;
+          background-color: none;
+      }
+      
+      .stylecleardiv
+      {
+          clear: both;
+          height: 0px;
+      }
+      
+      .spacebetweendiv
+      {
+          width: 10px;
+          height: 1px;
+          float: left;
+      }
+ 
+      
+   
+      /*new css for left DIV Ends*/
+      
+      /* Instructions CSS classes starts*/
+      
+      .headinstructions
+      {
+          background-color: #206ba4;
+          color: white;
+          height: 25px;
+          width: 1000px;
+          font-family: Calibri;
+          font-weight: bold;
+          text-align: center;
+      }
+      
+      .instrctions
+      {
+          text-align: left;
+          font-family: Calibri;
+          font-size: medium;
+      }
+      
+      .redinstrctions
+      {
+          text-align: left;
+          font-family: Calibri;
+          font-size: medium;
+          color: Red;
+      }
+
+
+
+
+
+
+
+      .button-container {
+          display: flex;
+          justify-content: center;
+      }
+
+      /* CSS for the buttons */
+      .button {
+          background-color: #3498db;
+          color: #fff;
+          padding: 10px 20px;
+          margin: 0px 40px 20px 80px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s, transform 0.2s;
+          height: 40px;
+          width: 160px;
+          text-decoration: none;
+          text-justify: center;
+          
+      }
+
+      /* Hover effect */
+      .button:hover {
+          background-color: #2980b9;
+          transform: scale(1.05);
+      }
+
+
+
+      .slider{
+          width: 1000px;
+          height: 300px;
+          align-items: center;
+          background-size: 100% 100%;
+          
+          background-image: url('static/img/g1.png');
+          animation: changeImage 20s linear infinite;
+      
+      }
+
+      @keyframes changeImage {
+          0%{
+              background-image: url('static/img/banner.png');
+          }
+          25%{
+              background-image: url( 'static/img/cafeteria.png');
+          }
+          50%{
+              background-image: url('static/img/library.png');
+          }
+          75%{
+              background-image: url('static/img/banner.png');
+          }
+          100%{
+              background-image: url('static/certificate.jpg');
+          }
+      }
+
+      .event-section{
+          width: 1000px;
+          
+      }
+
+      .event{
+          width: 293px;
+          margin: 1% 1% 1% 1%;
+          float: left;
+          background-color: #fff;
+          padding: 10px;
+      }
+
+      .event .heading1{
+          border-bottom: 1px solid #46b7c1;
+          padding: 5px;
+          color: #fff;
+          background: #46b7c1;
+      }
+      .heading1{
+          font-size: 28px;
+          font-weight: 500;
+          border-bottom: 1px solid #46b7c1;
+          margin-bottom: 20px;
+          color: #46b7c1;
+          text-align: center;
+      }
+
+      .event ul li{
+          margin-bottom: 20px;
+      }
+
+
+      .aboutus-container .heading1{
+          border-bottom: 1px solid #46b7c1;
+          padding: 5px;
+          color: #fff;
+          background: #46b7c1;
+      }
+      .aboutus-container div{
+          width: 45%;
+          float:left;
+          line-height: 30px;
+          font-size: 10px;
+          margin: 0% 1% 0% 1%;
+          background-color: #fff;
+          padding: 10px;
+      }
+
+      .aboutus-container h4{
+          font-size: 22px;
+
+      }
+      .aboutus-container p{
+          line-height: 42px;
+          font-size:17px ;
+      }
+
+      .aboutus-container img{
+          width: 49%;
+          height: 365px;
+          float: left;
+      }
+
+
+
+      .teachers-container .heading1{
+          border-bottom: 1px solid #46b7c1;
+          padding: 5px;
+          color: #fff;
+          background: #46b7c1;
+          margin-top: 2%;
+      }
+
+      .staff-card {
+          display: inline-block;
+          margin: 10px;
+          border: 1px solid #ccc;
+          padding: 10px;
+          text-align: center;
+          transition: transform 0.3s;
+      }
+
+      .staff-card:hover {
+          transform: scale(1.1);
+      }
+
+      .staff-image {
+          max-width: 260px;
+          height: 250px;
+      }
+
+      .staff-name {
+          font-weight: bold;
+          margin-top: 5px;
+      }
+
+      .staff-post {
+          margin-top: 5px;
+         
+      }
+
+      .gallery-container .heading1{
+          border-bottom: 1px solid #46b7c1;
+          padding: 5px;
+          color: #fff;
+          background: #46b7c1;
+          margin-top: 2%;
+      }
+
+      .gallery-container img{
+          width: 30%;
+          height: 45%;
+
+      }
+
+      .gallery-container img:hover {
+          transform: scale(1.1);
+      }
+
+
+
+      .footer{
+          background-color: #46b7c1;
+          padding: 5px 0px;
+          width: 1000px;
+          float: left;
+          margin-bottom: 40px;
+      }
+
+      .footer-logo{
+          width: 30%;
+          height: 20%;
+          margin-left: 0px;
+      }
+
+      .footer-section{
+          width: 1000px;
+          float: left;
+          text-align: center;
+          
+      }
+
+      .footer-section a{
+          color: #fff;
+          margin-left: 10px;
+          text-decoration: none;
+          margin-bottom: 30%;
+      }
+      
+      /*Instruction CSS Classes ends*/
+      
+      
+/* Existing CSS styles */
+
+@media(max-width: 700px) {
+  .HeaderColorDiv, .width1000pxdiv {
+      width: 100%;
+  }
+
+
+  .headerribbon_title_text {
+      /* height: 100px; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* float: left; */
+      font-family: Georgia;
+      font-size: min(38px, max(30px, 3vw));
+      /* font: 3vw Georgia; */
+      /* line-height: 100px; */
+      color: #281d82;
+      margin-left: 0%;
+  }
+
+  .MenuItemDivbar
+  {
+      width: 84px;
+      float: left;
+      text-align: center;
+      margin-right: 10px;
+      background: white;
+      font-family: Calibri;
+      color: #0077b6;
+      font-weight: bold;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      position: relative; /*pointer-events: none;*/
+  }
+  .MenuItemDivbar:hover .NotificationSpan
+  {
+      /*If you hover over the help icon, show the help_popup span*/
+      display: block;
+  }
+
+  .MenuItemLastDivbar
+      {
+          width: 84px;
+          float: left;
+          text-align: center;
+          background: white;
+          font-family: Calibri;
+          color: #0077b6;
+          font-weight: bold;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          position: relative;
+      }
+      
+      .MenuItemLastDivbar:hover .NotificationSpan
+      {
+          /*If you hover over the help icon, show the help_popup span*/
+          display: block;
+      }
+
+      .MenuItemDiv
+      {
+          width: 84px;
+          float: left; /*text-align: center;*/
+          margin-left: 15px;
+          margin-right: 10px;
+          background: white;
+          font-family: Calibri; /*color:#b62a26;*/
+          color: #0077b6;
+          font-weight: bold;
+          padding-top: 5px;
+          padding-bottom: 5px; /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+          position: relative;
+      }
+      
+      .MenuItemLastDiv
+      {
+          width: 84px;
+          float: left;
+          text-align: center;
+          background: white;
+          font-family: Calibri;
+          color: #b62a26;
+          font-weight: bold;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          position: relative;
+      }
+      
+      .MenuItemDiv:hover .NotificationSpan
+      {
+          /*If you hover over the help icon, show the help_popup span*/
+          display: block;
+          left: 100px;
+      }
+
+      .NotificationSpan
+      {
+          /*Normally, hide this span*/
+          display: none;
+          position: absolute;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          color: red;
+          width: 84px; /*text-align: center;*/
+          top: 30px;
+          background: white;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          z-index: 99; /*360px; is around the position I want*/
+      }
+      
+
+      .MenuSubitem
+      {
+          text-decoration: none;
+          line-height: 20px; /*color:#b62a26;*/ /*color:#8CC739;*/ /*color: #628b27;*/
+          color: #0077b6;
+          width: 84px;
+          float: left;
+          cursor: pointer; /*leftbar*/
+          border-radius: 10px;
+          -webkit-border-radius: 10px;
+          -moz-border-radius: 10px;
+          vertical-align: middle;
+          text-align: center;
+          font-weight: normal;
+          padding-top: 5px;
+          padding-bottom: 5px;
+      }
+      
+
+      
+      .MenuSubitemBlue
+      {
+          text-decoration: none;
+          line-height: 20px;
+          color: Blue;
+          width: 84px;
+      }
+      
+      .MenuItemDiv:hover
+      {
+          /*color:Black;*/
+          color: #628b27;
+      }
+      
+      .MenuSubitem:hover
+      {
+          /*color:Black;*/ /*color: #628b27;*/
+          background-color: #0077b6;
+          color: yellow;
+      }
+
+      .staff-card {
+          display: inline-block;
+          margin: 10px;
+          border: 1px solid #ccc;
+          padding: 10px;
+          text-align: center;
+          transition: transform 0.3s;
+      }
+
+      .staff-card:hover {
+          transform: scale(1.1);
+      }
+
+      .staff-image {
+          max-width: 80px;
+          height: 70px;
+      }
+
+
+  .centermsgdiv{
+      width: 100%;
+  }
+  .image1 {
+      margin-left: 1%;
+      
+  }
+
+  .slider{
+      width: 100%;
+  }
+  .headingdivupdate {
+      width: 100%;
+      font-size: 14px;
+  }
+
+  .event {
+    
+      width: 116px;
+      margin: 4% 1% 1% 1%;
+      float: left;
+      background-color: #fff;
+      padding: 1px 1px 1px 0px;
+  }
+
+  .event-section {
+      width: 100%;
+  }
+
+  .event .heading1, .heading1 {
+      font-size: 24px;
+  }
+
+  .aboutus-container div, .aboutus-container img {
+      width: 100%;
+      float: none;
+  }
+
+  .aboutus-container h4 {
+      font-size: 20px;
+  }
+
+  .aboutus-container p {
+      font-size: 16px;
+  }
+
+  .gallery-container img {
+      width: 85px;
+      height: 80px;
+      margin: 3%;
+  }
+
+  .footer-logo {
+      width: 200px;
+      height: 100px;
+  }
+  .footer-section{
+      width: 100%;
+      float: left;
+      text-align: center;
+      
+  }
+
+  .footer-section a{
+      color: #fff;
+      margin-left: 10px;
+      text-decoration: none;
+      margin-bottom: 30%;
+  }
+  
+  .footer{
+      background-color: #46b7c1;
+      padding: 5px 0px;
+      width: 100%;
+      float: left;
+      margin-bottom: 40px;
+  }
+  
+}
+
+      
+      
+      
+      
+      
+      
+      
+  </style>
+
+
+</head>
+<body class="body">
+  <form method="post" action="./" id="form1">
+      <div class="aspNetHidden">
+          <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTY1NDU2MTA1MmRkbjd70GvCgYa1qGR9qPa5YVU5Ob5/RvTygev3Ex0QTSk=">
+          </div>
+          
+          <div class="aspNetHidden">
+          
+              <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="8D0E13E6">
+          </div>
+                  <div align="center">
+                      <div class="HeaderColorDiv">
+                      </div>
+                      <div class="width1000pxdiv">
+                          
+                          <div class="headerribbon_content">
+                              <div class="headerribbon">
+                                  <div class="image1">
+                                      <img id="Image1" src="{% static 'img/gpn.jpg' %}" style="height:100px;">
+                                  </div>
+                                  <div class="headerribbon_title_text">
+                                      <div>
+                                        
+                                          GPN Online Hostel Admision   <span> <a href="{% url 'admin_log' %}" class="option-box"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                                          </svg>
+                                        </a> </span>               
+                                      </div>
+                                  </div>
+                                
+                              </div>
+                          </div>
+                      </div>
+                      <div class="HeaderColorDiv">
+                      </div>
+                  </div>
+
+
+
+      <!--Test Menu Div Start-->
+      <div class="stylecleardiv">
+      </div>
+      <div class="stylecleardiv">
+      </div>
+      <div class="Height10pxdiv">
+      </div>
+      <div class="stylecleardiv">
+      </div>
+      <div class="Height10pxdiv">
+      </div>
+      <div class="stylecleardiv">
+      </div>
+      <div class="Height10pxdiv">
+      </div>
+      <div class="stylecleardiv">
+      </div>
+      <div class="Height10pxdiv">
       </div>
 
-    </div>
-  </header>
 
-  <section id="hero" class="clearfix">
-    <div class="container d-flex h-100">
-      <div class="row justify-content-center align-self-center" data-aos="fade-up">
-        <div class="col-lg-6 intro-info order-lg-first order-last" data-aos="zoom-in" data-aos-delay="100">
-          <h2>Take Step<br>Toward Your <span>Success!</span></h2>
-          <h5>GPN Hostel Addmission</h5>
+      <div align="center">
+          <div class="width1000pxdiv">
+              <div class="button-container">
+                  <a class="button" href="{% url 'firstyrdes' %}"><b>FIRST YEAR</b></a>
+                  <a class="button" href="{% url 'secondyrdes' %}"><b>SECOND YEAR</b></a>
+                  <a class="button" href="{% url 'thirdyrdes' %}"><b>THIRD YEAR</b></a>
+              </div>
+          </div>
+      </div>
+
+
+      <div class="stylecleardiv">
+      </div>
+      <div class="Height10pxdiv">
+      </div>
+      <div align="center">
+          <div class="centermsgdiv">
+              <span>
+                  <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+                   <img src="adt2/new.gif.png">
+                      
+                      Notification for HOSTEL ADMISSION ONLINE
+                      2023 Schedule-I Start From
+                       <span style="color: Red">03-08-2023</span> to
+                       <span style="color: Red">23-08-2023</span>.
+                 </marquee>
+              </span>
+          </div>
+      </div>
+
+
+      <div class="Height10pxdiv">
+      </div>
+      <div align="center">
+          
+              <div class="slider">
+                  
+              </div>
+          
+      </div>
+      <div class="Height10pxdiv">
+      </div>
+
+
+
+
+
+
+<div class="stylecleardiv">
+</div>
+<div class="Height10pxdiv">
+</div>
+
+<div class="Height20pxdiv">
+</div>
+
+<div align="center">
+  <div class="event-section" style="background-color: #f0f3fa;">
+      <div class="aboutus-container">
           <div>
-            <a href="#about" class="btn-get-started scrollto">Get Started</a>
+              <h2 class="heading1">About Us</h2>
+              <h4>Government Polytechnic nagpur</h4>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Natus molestias laudantium, eligendi odit harum vitae nulla est nihil rerum veniam
+                  aut amet voluptatem ullam temporibus quibusdam distinctio possimus aperiam quos.</p>
           </div>
-        </div>
-
-        <div class="col-lg-6 intro-img order-lg-last order-first" data-aos="zoom-out" data-aos-delay="200">
-          <img src="{% static 'img/intro-img.svg' %}" alt="" class="img-fluid">
-        </div>
+          <img src="{% static 'img/banner.png' %}" alt="">
       </div>
+  </div>
+</div>
+       
 
-    </div>
-  </section>
 
-  <section id="testimonials" class="testimonials">
-    <div class="container aos-init aos-animate" data-aos="zoom-in">
+<div class="stylecleardiv">
+</div>
+<div class="Height10pxdiv">
+</div>
 
-      <header class="section-header">
-        <h3> Important Reviews  </h3>
-      </header>
+<div class="Height20pxdiv">
+</div>
 
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
 
-          <div class="testimonials-slider swiper swiper-initialized swiper-horizontal swiper-pointer-events aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-            <div class="swiper-wrapper" id="swiper-wrapper-db10a23faeddc0eb3" aria-live="off" style="transition-duration: 0ms; transform: translate3d(-2704.15px, 0px, 0px);"><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" role="group" aria-label="1 / 4">
-                <div class="testimonial-item">
-                  <img src="{% static 'img/testimonial-1.jpg' %}" class="testimonial-img" alt="">
-                  <h3>Saul Goodman</h3>
-                  <h4>Ceo &amp; Founder</h4>
-                  <p>
-                    Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                  </p>
-                </div>
-              </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1" role="group" aria-label="2 / 4">
-                <div class="testimonial-item">
-                  <img src="{% static 'img/testimonial-2.jpg' %}" class="testimonial-img" alt="">
-                  <h3>Sara Wilsson</h3>
-                  <h4>Designer</h4>
-                  <p>
-                    Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                  </p>
-                </div>
-              </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="2" role="group" aria-label="3 / 4">
-                <div class="testimonial-item">
-                  <img src="{% static 'img/testimonial-3.jpg' %}" class="testimonial-img" alt="">
-                  <h3>Jena Karlis</h3>
-                  <h4>Store Owner</h4>
-                  <p>
-                    Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                  </p>
-                </div>
-              </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="3" role="group" aria-label="4 / 4">
-                <div class="testimonial-item">
-                  <img src="{% static 'img/testimonial-4.jpg' %}" class="testimonial-img" alt="">
-                  <h3>Matt Brandon</h3>
-                  <h4>Freelancer</h4>
-                  <p>
-                    Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                  </p>
-                </div>
+<div align="center">
+  
+      <div class="event-section" style="background-color: #f0f3fa;">
+          <div class="teachers-container">
+              <div>
+                  <h2 class="heading1">Our Staff</h2>
+
+                  <div class="staff-card">
+                      <img class="staff-image" src="{% static 'img/user1.jpg' %}" alt="Staff 1">
+                      <div class="staff-name">John Doe</div>
+                      <div class="staff-post">Manager</div>
+                  </div>
+              
+                  <div class="staff-card">
+                      <img class="staff-image" src="{% static 'img/user2.jpg' %}" alt="Staff 2">
+                      <div class="staff-name">Jane Smith</div>
+                      <div class="staff-post">Designer</div>
+                  </div>
+              
+                  <div class="staff-card">
+                      <img class="staff-image" src="{% static 'img/gpn.jpg' %}" alt="Staff 3">
+                      <div class="staff-name">Bob Johnson</div>
+                      <div class="staff-post">Developer</div>
+                  </div>
               </div>
-
-              <div class="swiper-slide swiper-slide-duplicate-next" data-swiper-slide-index="0" role="group" aria-label="1 / 4">
-                <div class="testimonial-item">
-                  <img src="{% static 'img/testimonial-1.jpg' %}" class="testimonial-img" alt="">
-                  <h3>Saul Goodman</h3>
-                  <h4>Ceo &amp; Founder</h4>
-                  <p>
-                    Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                  </p>
-                </div>
-              </div>
-
-              <div class="swiper-slide" data-swiper-slide-index="1" role="group" aria-label="2 / 4">
-                <div class="testimonial-item">
-                  <img src="{% static 'img/testimonial-2.jpg' %}" class="testimonial-img" alt="">
-                  <h3>Sara Wilsson</h3>
-                  <h4>Designer</h4>
-                  <p>
-                    Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                  </p>
-                </div>
-              </div>
-
-              <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="2" role="group" aria-label="3 / 4">
-                <div class="testimonial-item">
-                  <img src="{% static 'img/testimonial-3.jpg' %}" class="testimonial-img" alt="">
-                  <h3>Jena Karlis</h3>
-                  <h4>Store Owner</h4>
-                  <p>
-                    Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                  </p>
-                </div>
-              </div>
-
-              <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="3" role="group" aria-label="4 / 4">
-                <div class="testimonial-item">
-                  <img src="{% static 'img/testimonial-4.jpg' %}" class="testimonial-img" alt="">
-                  <h3>Matt Brandon</h3>
-                  <h4>Freelancer</h4>
-                  <p>
-                    Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                  </p>
-                </div>
-              </div>
-
-            <div class="swiper-slide swiper-slide-duplicate swiper-slide-next" data-swiper-slide-index="0" role="group" aria-label="1 / 4">
-                <div class="testimonial-item">
-                  <img src="{% static 'img/testimonial-1.jpg' %}" class="testimonial-img" alt="">
-                  <h3>Saul Goodman</h3>
-                  <h4>Ceo &amp; Founder</h4>
-                  <p>
-                    Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                  </p>
-                </div>
-              </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1" role="group" aria-label="2 / 4">
-                <div class="testimonial-item">
-                  <img src="{% static 'img/testimonial-2.jpg' %}" class="testimonial-img" alt="">
-                  <h3>Sara Wilsson</h3>
-                  <h4>Designer</h4>
-                  <p>
-                    Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                  </p>
-                </div>
-              </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="2" role="group" aria-label="3 / 4">
-                <div class="testimonial-item">
-                  <img src="{% static 'img/testimonial-3.jpg' %}" class="testimonial-img" alt="">
-                  <h3>Jena Karlis</h3>
-                  <h4>Store Owner</h4>
-                  <p>
-                    Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                  </p>
-                </div>
-              </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="3" role="group" aria-label="4 / 4">
-                <div class="testimonial-item">
-                  <img src="{% static 'img/testimonial-4.jpg' %}" class="testimonial-img" alt="">
-                  <h3>Matt Brandon</h3>
-                  <h4>Freelancer</h4>
-                  <p>
-                    Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                  </p>
-                </div>
-              </div></div>
-            <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 4" aria-current="true"></span></div>
-          <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <main id="main">
-    <section id="services" class="services section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <header class="section-header">
-          <h3>Services</h3>
-          <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus.</p>
-        </header>
-
-        <div class="row g-5">
-
-          <div class="col-md-6 col-lg-4 wow bounceInUp" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <div class="icon" style="background: #fceef3;"><i class="bi bi-briefcase" style="color: #ff689b;"></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-            </div>
           </div>
-          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
-            <div class="box">
-              <div class="icon" style="background: #fff0da;"><i class="bi bi-card-checklist" style="color: #e98e06;"></i></div>
-              <h4 class="title"><a href="">Dolor Sitema</a></h4>
-              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-            </div>
+      </div>
+  
+</div>
+
+
+<div class="stylecleardiv">
+</div>
+<div class="Height10pxdiv">
+</div>
+
+<div class="Height20pxdiv">
+</div>
+
+
+<div align="center">
+  
+  <div class="event-section" style="background-color: #f0f3fa;">
+      <div class="gallery-container">
+              <h2 class="heading1">Gallery</h2>
+              <img src="{% static 'img/about.jpg' %}" alt="">
+              <img src="{% static 'img/banner2.jpg' %}" alt="">
+              <img src="{% static 'img/library.jpg' %}" alt=""> 
+              <img src="{% static 'img/about.jpg' %}" alt="">
+              <img src="{% static 'img/london.jpg' %}" alt="">
+              <img src="{% static 'img/newyork.png' %}" alt="">
+              <img src="{% static 'img/user2.jpg' %}" alt="">
+              <img src="{% static 'img/about.jpg' %}" alt="">
+              <img src="{% static 'img/team-1.jpg' %}" alt="">
+            
+              
+      </div>
+  </div>
+</div>
+
+<div class="stylecleardiv">
+</div>
+<div class="Height10pxdiv">
+</div>
+
+<div class="Height20pxdiv">
+</div>
+
+
+<div align="center">
+  <div class="event-section">
+  <div class="footer">
+      <div class="container">
+          <div class="footer-section">
+              <img class="footer-logo" src="{% static 'img/gpn.jpg' %}" alt="">
           </div>
 
-          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
-            <div class="box">
-              <div class="icon" style="background: #e6fdfc;"><i class="bi bi-bar-chart" style="color: #3fcdc7;"></i></div>
-              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-            </div>
-          </div>   
-      </div>
-      </div>
-    <section id="team" class="team section-bg">
-      <div class="container" data-aos="fade-up">
-        <div class="section-header">
-          <h3> Our Staff </h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="member">
-              <img src="{% static 'img/team-1.jpg' %}" class="img-fluid" alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>Walter White</h4>
-                  <span>Chief Executive Officer</span>
-                  <div class="social">
-                    <a href=""><i class="bi bi-twitter"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""><i class="bi bi-linkedin"></i></a>
+          <div class="footer-section">
+              <div class="container" align="center" style="margin-top: 1%;">
+                  <div class="copyright">
+                    &copy; Copyright <strong>Designed by Group_5 </strong> All Rights Reserved
+                  </div>
+                  <div class="credits">
+                    
                   </div>
                 </div>
-              </div>
-            </div>
           </div>
 
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="member">
-              <img src="{% static 'img/team-2.jpg' %}" class="img-fluid" alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>Sarah Jhonson</h4>
-                  <span>Product Manager</span>
-                  <div class="social">
-                    <a href=""><i class="bi bi-twitter"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""><i class="bi bi-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="member">
-              <img src="{% static 'img/team-3.jpg' %}" class="img-fluid" alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>William Anderson</h4>
-                  <span>CTO</span>
-                  <div class="social">
-                    <a href=""><i class="bi bi-twitter"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""><i class="bi bi-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="member">
-              <img src="{% static 'img/team-4.jpg' %}" class="img-fluid" alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>Amanda Jepson</h4>
-                  <span>Accountant</span>
-                  <div class="social">
-                    <a href=""><i class="bi bi-twitter"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""><i class="bi bi-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
 
       </div>
-    </section>
-    <section id="pricing" class="pricing section-bg wow fadeInUp">
+  </div>
+</div>
+</div>
+  </form>
 
-      <div class="container" data-aos="fade-up">
-
-        <header class="section-header">
-          <h3>Pricing</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
-        </header>
-
-        <div class="row flex-items-xs-middle flex-items-xs-center">
-
-          <div class="col-xs-12 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="card">
-              <div class="card-header">
-                <h3><span class="currency">$</span>19<span class="period">/month</span></h3>
-              </div>
-              <div class="card-block">
-                <h4 class="card-title">
-                  Basic Plan
-                </h4>
-                <ul class="list-group">
-                  <li class="list-group-item">Odio animi voluptates</li>
-                  <li class="list-group-item">Inventore quisquam et</li>
-                  <li class="list-group-item">Et perspiciatis suscipit</li>
-                  <li class="list-group-item">24/7 Support System</li>
-                </ul>
-                <a href="#" class="btn">Choose Plan</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xs-12 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="card">
-              <div class="card-header">
-                <h3><span class="currency">$</span>29<span class="period">/month</span></h3>
-              </div>
-              <div class="card-block">
-                <h4 class="card-title">
-                  Regular Plan
-                </h4>
-                <ul class="list-group">
-                  <li class="list-group-item">Odio animi voluptates</li>
-                  <li class="list-group-item">Inventore quisquam et</li>
-                  <li class="list-group-item">Et perspiciatis suscipit</li>
-                  <li class="list-group-item">24/7 Support System</li>
-                </ul>
-                <a href="#" class="btn">Choose Plan</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xs-12 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="card">
-              <div class="card-header">
-                <h3><span class="currency">$</span>39<span class="period">/month</span></h3>
-              </div>
-              <div class="card-block">
-                <h4 class="card-title">
-                  Premium Plan
-                </h4>
-                <ul class="list-group">
-                  <li class="list-group-item">Odio animi voluptates</li>
-                  <li class="list-group-item">Inventore quisquam et</li>
-                  <li class="list-group-item">Et perspiciatis suscipit</li>
-                  <li class="list-group-item">24/7 Support System</li>
-                </ul>
-                <a href="#" class="btn">Choose Plan</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    <div class="container" align="center" style="margin-top: 10%;">
-      <div class="copyright">
-        &copy; Copyright <strong>Satvik</strong> All Rights Reserved
-      </div>
-      <div class="credits">
-        Designed by Group_5 
-      </div>
-    </div>
-  </footer>
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
-  <script src="{% static 'vendor/aos/aos.js' %}"></script>
-  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
-  <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
-  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
-
-  <script src="{% static 'js/main.js' %}"></script>
-
-</body>
-
-</html>
+</body></html>

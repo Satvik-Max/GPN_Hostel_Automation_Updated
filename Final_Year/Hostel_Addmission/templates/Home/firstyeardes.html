@@ -1,0 +1,727 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROVISIONAL MERIT LIST</title>
+    <style>
+        .HeaderColorDiv {
+            /* background-color: #394b71; */
+            background-color: #0077b6;
+            height: 30px;
+            width: 1000px;
+            /* background-image: linear-gradient(-90deg,#000080, #0077b6, green,yellow, orange); */
+        }
+        .width1000pxdiv {
+            width: 100%;
+        }
+        .headerribbon_content {
+            width: 100%;
+        }
+        .headerribbon {
+            width: 100%;
+            background-color: #FFF;
+            display: flex;
+            flex-direction: row;
+            
+            
+        }
+        .headerribbon_title_text {
+            /* height: 100px; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* float: left; */
+            font-family: Georgia;
+            font-size: min(38px, max(30px, 3vw));
+            /* font: 3vw Georgia; */
+            /* line-height: 100px; */
+            color: #281d82;
+            margin-left: 3%;
+        }
+        .image1{
+            margin-left: 20%;
+            padding: 10px auto;
+        }
+        
+        .HeaderColorDiv {
+            /* background-color: #394b71; */
+            background-color: #0077b6;
+            height: 30px;
+            width: 1000px;
+            /* background-image: linear-gradient(-90deg,#000080, #0077b6, green,yellow, orange); */
+        }
+        
+        .body
+        {
+            background-image: url({% static 'img/bg1.png' %});
+        }
+        .avoidclick
+        {
+            pointer-events: none;
+        }
+        .spacediv
+        {
+            height: 70px;
+            width: 10px;
+            background: #E6E6E6;
+        }
+        
+        .btn
+        {
+            width: 135px;
+            height: 40px;
+            max-height: 40px;
+            max-width: 150px; /* border: solid 2px #b62a26;     color: #b62a26; */
+            border: solid 2px #0077B6;
+            color: #0077B6;
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: Calibri;
+            font-size: medium;
+            margin-right: 20px;
+            padding: 8px;
+        }
+        
+        .btn:hover
+        {
+            border: solid 2px white;
+            color: white; /*background: #b62a26;*/
+            background: #0077B6;
+        }
+        
+        .btnclick
+        {
+            width: 100px; /*height: 25px;     max-height: 25px;     max-width: 150px;*/ /* border: solid 2px #b62a26;     color: #b62a26; */
+            border: solid 2px #0077B6;
+            color: #0077B6;
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: Calibri;
+            font-size: medium;
+            margin-right: 20px;
+            padding: 2px;
+        }
+        
+        .btnclick:hover
+        {
+            border: solid 2px white;
+            color: white; /*background: #b62a26;*/
+            background: #0077B6;
+        }
+        
+        
+          
+        .hplinkhome
+        {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            position: relative;
+        }
+        
+        .hplinkhome:hover
+        {
+            color: yellow;
+        }
+       
+    
+        .headingdivupdate
+        {
+            /*background:#b62a26;*/ /*background:#73D674;*/ /*background: #0074b3;*/
+            background: white; /*color: White;*/
+            color: black; /*color:#145B9B;*/
+            font-size: min(max(1.4vw, 12px), 16px);
+            font-family: Calibri;
+            margin: 3px;
+            border: 2px solid #00A4BE;
+            font-weight: bold;
+            border-radius: 6px;
+            text-align: justify;
+            padding-left: 20px;
+            padding-right: 20px; 
+         max-height:250px;
+        
+        }
+        .headingdiv
+        {
+            text-align: center; /*background:#b62a26;*/ /*background:#73D674;*/
+            background: #0074b3;
+            color: White; /*color:#145B9B;*/
+            font-size: large;
+            font-family: Calibri;
+            margin: 3px;
+            border: 2px solid #00A4BE;
+            font-weight: bold;
+            border-radius: 6px;
+        }
+        .centermsgdiv
+        {
+            width: 1000px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            font-family: Calibri;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: white;
+            font-size: medium;
+            font-weight: bold;
+            max-height: 70px;
+            border-radius: 6px;
+            border: 1px solid #0077b6;
+        }
+    
+        .hoverdiv
+        {
+            font-family: Calibri;
+            text-align: center;
+            color: #b62a26;
+            margin-top: 3px;
+            margin-bottom: 3px;
+            font-weight: bold;
+            position: relative;
+            text-decoration: none;
+        }
+        .hoverdivbar
+        {
+            font-family: Calibri;
+            text-align: center;
+            color: #0077b6;
+            margin-top: 3px;
+            margin-bottom: 3px;
+            font-weight: bold;
+            position: relative;
+            text-decoration: none;
+        }
+      
+    
+        
+    
+        
+        
+        
+        .HeaderColorDiv
+        {
+            /*background-color:#394b71;*/
+            background-color: #0077b6;
+            height: 30px;
+            width: 1000px; /*background-image: linear-gradient(-90deg,#000080, #0077b6, green,yellow, orange);*/
+        }
+       
+        .MenuItemDivbar
+        {
+            width: 243px;
+            float: left;
+            text-align: center;
+            margin-right: 10px;
+            background: white;
+            font-family: Calibri;
+            color: #0077b6;
+            font-weight: bold;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            position: relative; /*pointer-events: none;*/
+        }
+        .MenuItemDivbar:hover .NotificationSpan
+        {
+            /*If you hover over the help icon, show the help_popup span*/
+            display: block;
+        }
+        .MenuItemLastDivbar
+        {
+            width: 240px;
+            float: left;
+            text-align: center;
+            background: white;
+            font-family: Calibri;
+            color: #0077b6;
+            font-weight: bold;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            position: relative;
+        }
+        
+        .MenuItemLastDivbar:hover .NotificationSpan
+        {
+            /*If you hover over the help icon, show the help_popup span*/
+            display: block;
+        }
+        
+        .MenuItemDivHome
+        {
+            width: 240px;
+            float: left; /*text-align: center;*/
+            border-bottom-color: #e6e6e6; /*border-bottom-color:#FFD700;*/
+            border-bottom-style: solid;
+            margin-left: 15px;
+            margin-right: 10px;
+            background: white;
+            font-family: Calibri; /*color:#b62a26;*/
+            color: #0077b6;
+            font-weight: bold;
+            padding-top: 5px;
+            padding-bottom: 5px; /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+            position: relative;
+            top: 1px;
+            left: -1px;
+            border-bottom-style: solid; /*border-bottom-color: inherit;*/
+            border-bottom-width: medium;
+        }
+        
+        .MenuItemDivHome:hover .NotificationSpan
+        {
+            /*If you hover over the help icon, show the help_popup span*/
+            display: block;
+            left: 100px;
+        }
+        
+        .MenuItemDivHomeLast
+        {
+            width: 240px;
+            float: left; /*text-align: center;*/
+            margin-left: 15px;
+            margin-right: 10px;
+            background: white;
+            font-family: Calibri; /*color:#b62a26;*/
+            color: #0077b6;
+            font-weight: bold;
+            padding-top: 5px;
+            padding-bottom: 5px; /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+            position: relative;
+            top: 1px;
+            left: -1px;
+        }
+        
+        .MenuItemDivHomeLast:hover .NotificationSpan
+        {
+            /*If you hover over the help icon, show the help_popup span*/
+            display: block;
+            left: 100px;
+        }
+        
+        .MenuItemDiv
+        {
+            width: 240px;
+            float: left; /*text-align: center;*/
+            margin-left: 15px;
+            margin-right: 10px;
+            background: white;
+            font-family: Calibri; /*color:#b62a26;*/
+            color: #0077b6;
+            font-weight: bold;
+            padding-top: 5px;
+            padding-bottom: 5px; /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+            position: relative;
+        }
+        
+        .MenuItemLastDiv
+        {
+            width: 240px;
+            float: left;
+            text-align: center;
+            background: white;
+            font-family: Calibri;
+            color: #b62a26;
+            font-weight: bold;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            position: relative;
+        }
+        
+        .MenuItemDiv:hover .NotificationSpan
+        {
+            /*If you hover over the help icon, show the help_popup span*/
+            display: block;
+            left: 100px;
+        }
+    
+        .MenuItemLastDiv:hover .NotificationSpan
+        {
+            /*If you hover over the help icon, show the help_popup span*/
+            display: block;
+        }
+        
+        .NotificationSpan
+        {
+            /*Normally, hide this span*/
+            display: none;
+            position: absolute;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            color: red;
+            width: 240px; /*text-align: center;*/
+            top: 30px;
+            background: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            z-index: 99; /*360px; is around the position I want*/
+        }
+        
+        .MenuSubitemHome
+        {
+            text-decoration: none;
+            line-height: 30px; /*color:#b62a26;*/ /*color:#8CC739;*/
+            color: #628b27;
+            width: 240px;
+            float: left;
+            margin-left: 10px;
+        }
+    
+    
+        
+        .MenuSubitem
+        {
+            text-decoration: none;
+            line-height: 20px; /*color:#b62a26;*/ /*color:#8CC739;*/ /*color: #628b27;*/
+            color: #0077b6;
+            width: 240px;
+            float: left;
+            cursor: pointer; /*leftbar*/
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            vertical-align: middle;
+            text-align: center;
+            font-weight: normal;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        
+    
+        
+        .MenuSubitemBlue
+        {
+            text-decoration: none;
+            line-height: 30px;
+            color: Blue;
+            width: 240px;
+        }
+        
+        .MenuItemDiv:hover
+        {
+            /*color:Black;*/
+            color: #628b27;
+        }
+        
+        .MenuSubitem:hover
+        {
+            /*color:Black;*/ /*color: #628b27;*/
+            background-color: #0077b6;
+            color: yellow;
+        }
+    
+        .Height5pxdiv
+        {
+            height: 5px;
+        }
+        
+        .Height10pxdiv
+        {
+            height: 10px;
+        }
+        
+        .Height20pxdiv
+        {
+            height: 20px;
+        }
+        
+        .Height30pxdiv
+        {
+            height: 30px;
+        }
+        
+        .Height40pxdiv
+        {
+            height: 40px;
+        }
+        
+        .Height50pxdiv
+        {
+            height: 50px;
+            width: 192px;
+        }
+        
+        .Height60pxdiv
+        {
+            height: 60px;
+            width: 192px;
+        }
+        
+        .width5pxdiv
+        {
+            width: 5px;
+            height: 12px;
+            float: left;
+        }
+        
+        .width10pxdiv
+        {
+            width: 10px;
+            height: 12px;
+            float: left;
+        }
+        .width20pxdiv
+        {
+            width: 20px;
+            height: 12px;
+            float: left;
+        }
+        .width1000pxdiv
+        {
+            width: 1000px;
+        
+        }
+        
+        .width1000pxdivcolornone
+        {
+            width: 1000px;
+            height: auto;
+            background-color: none;
+        }
+        
+        .stylecleardiv
+        {
+            clear: both;
+            height: 0px;
+        }
+        
+        .spacebetweendiv
+        {
+            width: 10px;
+            height: 1px;
+            float: left;
+        }
+    
+        
+     
+        /*new css for left DIV Ends*/
+        
+        /* Instructions CSS classes starts*/
+        
+        .headinstructions
+        {
+            background-color: #206ba4;
+            color: white;
+            height: 25px;
+            width: 1000px;
+            font-family: Calibri;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .instrctions
+        {
+            text-align: left;
+            font-family: Calibri;
+            font-size: medium;
+        }
+        
+        .redinstrctions
+        {
+            text-align: left;
+            font-family: Calibri;
+            font-size: medium;
+            color: Red;
+        }
+    
+        
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            width: 50%;
+            
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+        
+
+        tr, td, h3{
+            margin-left: 120px;
+        }
+
+        .download-button {
+            background-color: #0eae21;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 2px 2px;
+            cursor: pointer;
+        }
+
+        .description {
+            font-size: 16px;
+            margin-left: 250px;
+            
+        }
+
+
+        .event-section{
+            width: 1000px;
+            
+        }
+
+        .heading1{
+            border-bottom: 1px solid #46b7c1;
+            padding: 5px;
+            color: #fff;
+            background: #46b7c1;
+            margin-top: 2%;
+        }
+        .custom-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 10px;
+            margin-left: 165px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        /* Hover effect */
+        .custom-button:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+<body class="body">
+   
+  <form method="post" action="./" id="form1">
+    <div class="aspNetHidden">
+        <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTY1NDU2MTA1MmRkbjd70GvCgYa1qGR9qPa5YVU5Ob5/RvTygev3Ex0QTSk=">
+        </div>
+        
+        <div class="aspNetHidden">
+        
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="8D0E13E6">
+        </div>
+                <div align="center">
+                    <div class="HeaderColorDiv">
+                    </div>
+                    <div class="width1000pxdiv">
+                        
+                        <div class="headerribbon_content">
+                            <div class="headerribbon">
+                                <div class="image1">
+                                    <img id="Image1" src="{% static 'img/gpn.jpg' %}" style="height:100px;">
+                                </div>
+                                <div class="headerribbon_title_text">
+                                    <div>
+                                        GPN Online Hostel Admision                
+                                    </div>
+                                </div>
+                              
+                            </div>
+                        </div>
+                    </div>
+                    <div class="HeaderColorDiv">
+                    </div>
+                </div>
+
+
+
+    <!--Test Menu Div Start-->
+    <div class="stylecleardiv">
+    </div>
+    <div align="center">
+        <div class="width1000pxdiv">
+
+            <div class="MenuItemDivbar"><a href="{% url 'home' %}">
+                Home 
+            </a>
+                </span>
+            </div>
+           
+        </div>
+    </div>
+
+    <div class="stylecleardiv">
+    </div>
+    <div class="Height10pxdiv">
+    </div>
+    <div class="stylecleardiv">
+    </div>
+    <div class="Height10pxdiv">
+    </div>
+    <div class="stylecleardiv">
+    </div>
+    <div class="Height10pxdiv">
+    </div>
+    <div class="stylecleardiv">
+    </div>
+    <div class="Height10pxdiv">
+    </div>
+    
+    
+
+    <div align="center">
+        <div class="event-section" style="background-color: #f0f3fa;">
+
+            <h1 class="heading1"><center>FIRST YEAR STUDENTS</center></h1>
+
+
+    <div class="stylecleardiv">
+    </div>
+    <div class="Height10pxdiv">
+    </div>
+    <div class="stylecleardiv">
+    </div>
+    <div class="Height10pxdiv">
+    </div>
+    <div class="stylecleardiv">
+    </div>
+    <div class="Height10pxdiv">
+    </div>
+    
+            <table>
+        <tr>
+            <th><h2>Description</h2></th>
+            <th><h2> Link</h2></th>
+        </tr>
+        <tr>
+            <td class="description"> <h3>1. First Year Admission Form</h3> </td>
+            <td><a href="{% url 'First_year' %}" class="custom-button">Click Here</a><a href="{% url 'S_view1' %}" style="margin-left: 4px; margin-right: 2px;" class="custom-button">View</a></td>
+        </tr>
+        <tr>
+            <td class="description"><h3>2. Important Dates</h3> </td>
+            <td><a href="{% url 'imp_dates1' %}" class="custom-button">Click Here</a></td>
+        </tr>
+        <tr>
+            <td class="description"> <h3>3. Provisional Merit List</h3> </td>
+            <td><a href="{% url 'plist11' %}" class="custom-button">Click Here</a></td>
+        </tr>
+        <tr>
+            <td class="description"> <h3>4. Final Merit List </h3></td>
+            <td><a href="{% url 'flist11' %}" class="custom-button">Click Here</a></td>
+        </tr>
+    </table>
+        </div>
+    </div>
+    
+
+ 
+</body>
+</html>
+

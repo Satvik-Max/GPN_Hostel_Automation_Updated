@@ -14,7 +14,7 @@
 }
 </style>
 <body>
-    <div id="preview">
+    <div id="htmlContent">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -34,8 +34,9 @@
                 </div>
                 <div>
                     <div class="shadow-sm p-3 mb-5 bg-body-tertiary rounded">
-                        ID  : {{s.fno3}} <br>
+                        ID  : {{s.fno1}} <br>
                         Name : {{s.name}} <br>
+                        Enroll : {{s.Enroll}} <br>
                         DOB : {{s.DOB}}  <br>
                         Cast : {{s.cast}}  <br>
                         Nation : {{s.nationality}}  <br>
@@ -44,8 +45,7 @@
                         Add : {{s.Address1}}  <br>
                         Email : {{s.Email}}  <br>
                         Branch : {{s.Branch}}  <br>
-                        Backlog : {{s.Backlog}}  <br>
-                        NO-Backlog : {{s.Nu_Backlog}}  <br>
+                        Shift : {{s.shift}}  <br>
                         Percentage : {{s.percentage}}
                     </div>
                 </div>
@@ -59,7 +59,8 @@
                     <div class="shadow-sm p-3 mb-5 bg-body-tertiary rounded">
                         Name : {{s.Father_name}} <br>
                         Phone : {{s.phone2}}  <br>
-                        Add : {{s.Address2}} 
+                        Add : {{s.Address2}} <br>
+                        Occupation : {{s.occupation}}  
                     </div>
                 </div>
                 
@@ -100,6 +101,18 @@
                     <img src="{{ s.father_signature.url }}" class="rounded resized-image" />  
                 </pre>            
                 <h4 style="margin-left: 15%;">Parents Signature</h4>
+                </div>
+                </div>
+                <div class="shadow p-3 mb-5 bg-body-tertiary rounded" class="jumbotron">
+                    <h2>
+                        Student Passport Size Photo :
+                    </h2>
+                </div>
+                <div>
+                    <div class="shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                    <pre>
+                    <img src="{{ s.SPhoto.url }}" class="rounded resized-image" />  
+                </pre>
                 </div>
                 </div>
                 <div class="shadow p-3 mb-5 bg-body-tertiary rounded" class="jumbotron">
@@ -174,34 +187,17 @@
                 </pre>
                 </div>
                 </div>
-                
-                <form action="{% url 'admin_preview1' s.fno1 %}" method="post">
-                    {% csrf_token %}
-                    <label>Remarks : </label><input type="text" name="remark">
-                    <button> Add </button>
-                </form>
+
     </div>
     </div>
     </div>
 </div>
-    <button onclick="generatePDF()">export</button>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <script>
-        function generatePDF(){
-            const element= document.getElementById("preview");
-
-            var opt={
-                margin:0,
-                filename:"provisional.pdf",
-                image:{typr:'jpeg',quality:'0.98'},
-                html2canvas:{scale: 2},
-                jsPDF:{unit:'in',format:'letter',orientation:'portrait'}
-            };
-            html2pdf(element,opt)
-            
-            .save();
-        }
-    </script>
+<form action="{% url 'admin_preview1' s.fno1 %}" method="post">
+    {% csrf_token %}
+    <label>Remarks : </label><input type="text" name="remark">
+    <button> Add </button>
+</form>
+<a href="{% url 'printf1' s.fno1 %}"><button style="margin-bottom: 2%;align-items: center;"> Print </button>
+</a>
 </body>
 </html>

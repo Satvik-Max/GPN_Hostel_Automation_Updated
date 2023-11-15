@@ -25,6 +25,15 @@ file_path5 = os.path.join(settings.BASE_DIR, 'Hostel_Addmission\\templates\\ext_
 def home(request):
     return render(request , 'Home/index.html' )
 
+def firstyrdes(request):
+    return render(request , 'Home/firstyeardes.html' )
+
+def secondyrdes(request):
+    return render(request , 'Home/secondyeardes.html' )
+
+def thirdyrdes(request):
+    return render(request , 'Home/thirdyeardes.html' )
+
 def Hostellook(request):
     return render(request , 'Home/previewtab.html' )
 
@@ -399,6 +408,7 @@ def First_year(request):
         if request.method == "POST":
 
             name = request.POST['name']
+            enroll = request.POST['enroll']
             Bdate = request.POST['DOB']
             cast = request.POST['cast']
             nationality = request.POST['nation']
@@ -407,6 +417,7 @@ def First_year(request):
             address = request.POST['add']
             email = request.POST['email']
             branch = request.POST['Branch']
+            Shift = request.POST['Shift']
             obtain1 = int(request.POST['Obtained1']) 
             total1 = int(request.POST['Total1'])     
 
@@ -421,7 +432,9 @@ def First_year(request):
             fname = request.POST['fname']
             fphone = request.POST['fPhone']
             faddress = request.POST['fAddress']
-
+            Occupation = request.POST['occupation']
+            
+            P_photo = request.FILES.get('photo')
             Signature = request.FILES.get('Signature')
             fSignature = request.FILES.get('fSignature')
             marksheet2 = request.FILES.get('Marksheet2')
@@ -455,6 +468,7 @@ def First_year(request):
             h = HostelData1()
             h.fno1 = "2310" + str(count)
             h.name = name
+            h.Enroll = enroll
             h.DOB = Bdate
             h.cast = cast
             h.nationality = nationality 
@@ -463,12 +477,16 @@ def First_year(request):
             h.Address1 = address
             h.Email = email
             h.Branch = branch
+            h.shift = Shift
             h.percentage = per
 
             h.Father_name = fname
             h.phone2 = fphone
             h.Address2 = faddress
+            h.occupation = Occupation
 
+            if P_photo:
+                h.SPhoto = P_photo
             if Signature:
                 h.student_signature = Signature
             if fSignature:
@@ -513,6 +531,7 @@ def Second_year(request):
     if current_value == 'ON':
         if request.method == "POST":
             name = request.POST['name']
+            enroll = request.POST['enroll']
             Bdate = request.POST['DOB']
             cast = request.POST['cast']
             nationality = request.POST['nation']
@@ -521,6 +540,7 @@ def Second_year(request):
             address = request.POST['add']
             email = request.POST['email']
             branch = request.POST['Branch']
+            Shift = request.POST['Shift']
             backlog = request.POST['Backlog']
             noBack = request.POST['noBack']
             obtain1 = int(request.POST['Obtained1']) 
@@ -541,7 +561,9 @@ def Second_year(request):
             fname = request.POST['fname']
             fphone = request.POST['fPhone']
             faddress = request.POST['fAddress']
+            Occupation = request.POST['occupation']
 
+            P_photo = request.FILES.get('photo')
             Signature = request.FILES.get('Signature')
             fSignature = request.FILES.get('fSignature')
             Marksheet1 = request.FILES.get('Marksheet1')
@@ -576,6 +598,7 @@ def Second_year(request):
             h = HostelData2()
             h.fno2 = '2320'+str(count)
             h.name = name
+            h.Enroll = enroll
             h.DOB = Bdate
             h.cast = cast
             h.nationality = nationality 
@@ -584,6 +607,7 @@ def Second_year(request):
             h.Address1 = address
             h.Email = email
             h.Branch = branch
+            h.shift = Shift
             h.Backlog = backlog
             h.Nu_Backlog = noBack
             h.percentage = per
@@ -591,7 +615,10 @@ def Second_year(request):
             h.Father_name = fname
             h.phone2 = fphone
             h.Address2 = faddress
+            h.occupation = Occupation
 
+            if P_photo:
+                h.SPhoto = P_photo
             if Signature:
                 h.student_signature = Signature
             if fSignature:
@@ -754,6 +781,7 @@ def Third_year(request):
                 if request.method == "POST":
 
                     name = request.POST['name']
+                    enroll = request.POST['enroll']
                     Bdate = request.POST['DOB']
                     cast = request.POST['cast']
                     nationality = request.POST['nation']
@@ -762,12 +790,15 @@ def Third_year(request):
                     address = request.POST['add']
                     email = request.POST['email']
                     branch = request.POST['Branch']
+                    Shift = request.POST['Shift']
                     backlog = request.POST['Backlog']
                                            
                     fname = request.POST['fname']
                     fphone = request.POST['fPhone']
                     faddress = request.POST['fAddress']
+                    Occupation = request.POST['occupation']
 
+                    P_photo = request.FILES.get('photo')
                     Signature = request.FILES.get('Signature')
                     fSignature = request.FILES.get('fSignature')
                     Marksheet1 = request.FILES.get('Marksheet1')
@@ -799,6 +830,7 @@ def Third_year(request):
                 
                     data.fno3 = fno3
                     data.name = name
+                    data.Enroll = enroll
                     data.DOB = Bdate
                     data.cast = cast
                     data.nationality = nationality 
@@ -807,11 +839,15 @@ def Third_year(request):
                     data.Address1 = address
                     data.Email = email
                     data.Branch = branch
+                    data.shift = Shift
                     data.Backlog = backlog
                     data.Father_name = fname
                     data.phone2 = fphone
                     data.Address2 = faddress
+                    data.occupation = Occupation
 
+                    if P_photo:
+                        h.SPhoto = P_photo
                     if Signature:
                         data.student_signature = Signature
                     if fSignature:
@@ -840,6 +876,7 @@ def Third_year(request):
             if request.method == "POST":
 
                 name = request.POST['name']
+                enroll = request.POST['enroll']
                 Bdate = request.POST['DOB']
                 cast = request.POST['cast']
                 nationality = request.POST['nation']
@@ -848,6 +885,7 @@ def Third_year(request):
                 address = request.POST['add']
                 email = request.POST['email']
                 branch = request.POST['Branch']
+                Shift = request.POST['Shift']
                 backlog = request.POST['Backlog']
                 noBack = request.POST['noBack']
                 obtain1 = int(request.POST['Obtained1'])
@@ -869,7 +907,9 @@ def Third_year(request):
                 fname = request.POST['fname']
                 fphone = request.POST['fPhone']
                 faddress = request.POST['fAddress']
+                Occupation = request.POST['occupation']
 
+                P_photo = request.FILES.get('photo')
                 Signature = request.FILES.get('Signature')
                 fSignature = request.FILES.get('fSignature')
                 Marksheet1 = request.FILES.get('Marksheet1')
@@ -905,6 +945,7 @@ def Third_year(request):
                 h = HostelData3()
                 h.fno3 = '2330'+str(count)
                 h.name = name
+                h.Enroll = enroll
                 h.DOB = Bdate
                 h.cast = cast
                 h.nationality = nationality 
@@ -913,13 +954,17 @@ def Third_year(request):
                 h.Address1 = address
                 h.Email = email
                 h.Branch = branch
+                h.shift = Shift
                 h.percentage = per
                 h.Backlog = backlog
                 h.Nu_Backlog = noBack
                 h.Father_name = fname
                 h.phone2 = fphone
                 h.Address2 = faddress
+                h.occupation = Occupation
 
+                if P_photo:
+                    h.SPhoto = P_photo
                 if Signature:
                     h.student_signature = Signature
                 if fSignature:
@@ -1261,8 +1306,6 @@ def Year1_report(request):
         sumseats = OPENseets+OBCseets+SCseets+STseets+NTseets+SBCseets
         if tseets != sumseats:
             return HttpResponse("Invalid Seats")
-        backlog_YES_students = data.filter(Backlog='YES')
-        backlog_NO_students = data.filter(Backlog='NO')
         available_seats = {
             'OBC': OBCseets,
             'SC': SCseets,
@@ -1270,8 +1313,7 @@ def Year1_report(request):
             'NT': NTseets,
             'SBC':SBCseets
         }
-        Backlog_NO_students = sorted(backlog_NO_students ,key=lambda x:(-x.percentage))
-        Backlog_Yes_students = sorted(backlog_YES_students ,key=lambda x:( x.Nu_Backlog , -x.percentage))
+        Backlog_NO_students = sorted(data ,key=lambda x:(-x.percentage))
         openstudents = []
         count = 1
         open_student_seat = {}
@@ -1295,7 +1337,6 @@ def Year1_report(request):
                     Allocated_students.append(student.name)
                     available_seats[student_category] -= 1
         return render(request , 'Admin_OP/Provisional/third_year.html',{
-            'BACKLOG_YES':Backlog_Yes_students , 
             'BACKLOG_NO':Backlog_NO_students ,
             'Allocated_students':Allocated_students,
             'student_seat':student_seat,
@@ -1457,7 +1498,7 @@ def printform(request, fno3):
     for key, value in data.items():
         c.setFont("Helvetica", 12)  
         c.drawString(100, y, f'{key}: {value}')
-        y -= 20
+        y -= 30
 
     c.showPage()
     c.save()
@@ -1538,35 +1579,26 @@ def printform1(request, fno1):
         'Parents Phone':s.phone2,
         'parents Address':s.Address2
     }
-
     h1 = "Government Polytechnic Nagpur"
     h2 = "An Autonomous Institute of Government of Maharashtra"
     h3 = "Hostel Admission Form"
-
     pdf_filename = f"{s.fno1}_student_form.pdf"
     buffer = BytesIO()
-
     c = canvas.Canvas(buffer, pagesize=letter)
-
     c.setFont("Helvetica-Bold", 16)  
     c.drawString(100, 770, h1)
     c.setFont("Helvetica", 14)
     c.drawString(100, 750, h2)
     c.setFont("Helvetica-Bold", 16)
     c.drawString(100, 730, h3)
-
     y = 700  
-
     for key, value in data.items():
         c.setFont("Helvetica", 12)  
         c.drawString(100, y, f'{key}: {value}')
         y -= 20
-
     c.showPage()
     c.save()
-
     buffer.seek(0)
-
     response = HttpResponse(buffer, content_type='application/pdf')
     response['Content-Disposition'] = f'inline; filename="{pdf_filename}"'
     return response

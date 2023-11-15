@@ -36,6 +36,7 @@
                     <div class="shadow-sm p-3 mb-5 bg-body-tertiary rounded">
                         ID  : {{s.fno2}} <br>
                         Name : {{s.name}} <br>
+                        Enroll : {{s.Enroll}} <br>
                         DOB : {{s.DOB}}  <br>
                         Cast : {{s.cast}}  <br>
                         Nation : {{s.nationality}}  <br>
@@ -45,6 +46,7 @@
                         Email : {{s.Email}}  <br>
                         Branch : {{s.Branch}}  <br>
                         Backlog : {{s.Backlog}}  <br>
+                        Shift : {{s.shift}}  <br>
                         NO-Backlog : {{s.Nu_Backlog}}  <br>
                         Percentage : {{s.percentage}}
                     </div>
@@ -59,7 +61,8 @@
                     <div class="shadow-sm p-3 mb-5 bg-body-tertiary rounded">
                         Name : {{s.Father_name}} <br>
                         Phone : {{s.phone2}}  <br>
-                        Add : {{s.Address2}} 
+                        Add : {{s.Address2}} <br>
+                        Occupation : {{s.Occupation}}  
                     </div>
                 </div>
                 
@@ -100,6 +103,18 @@
                     <img src="{{ s.father_signature.url }}" class="rounded resized-image" />  
                 </pre>            
                 <h4 style="margin-left: 15%;">Parents Signature</h4>
+                </div>
+                </div>
+                <div class="shadow p-3 mb-5 bg-body-tertiary rounded" class="jumbotron">
+                    <h2>
+                        Student Passport Size Photo :
+                    </h2>
+                </div>
+                <div>
+                    <div class="shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                    <pre>
+                    <img src="{{ s.SPhoto.url }}" class="rounded resized-image" />  
+                </pre>
                 </div>
                 </div>
                 <div class="shadow p-3 mb-5 bg-body-tertiary rounded" class="jumbotron">

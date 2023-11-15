@@ -16,6 +16,10 @@ if student_access:
         path('Provisional_list2/',views.Provisional_list2,name='Provisional_list2'),
         path('Provisional_list1/',views.Provisional_list1,name='Provisional_list1'),
 
+        path('Firstyear_Des/',views.firstyrdes,name='firstyrdes'),
+        path('Secondyear_Des/',views.secondyrdes,name='secondyrdes'),
+        path('Thirdyear_Des/',views.thirdyrdes,name='thirdyrdes'),
+
         path('search_student_3rdYear/',views.Search3,name='search3'),
         path('search_student_2ndYear/',views.Search2,name='search2'),
         path('search_student_1stYear/',views.Search1,name='search1'),

@@ -19,7 +19,12 @@ class HostelData1(models.Model):
     Father_name = models.CharField(max_length=100)
     phone2 = models.IntegerField()
     Address2 = models.CharField(max_length=50)
-    
+
+    occupation = models.CharField(max_length=50)
+    shift = models.CharField(max_length=8)
+    Enroll = models.CharField(max_length=10)
+  
+    SPhoto = models.FileField(upload_to='3signatures/student/',default='file.jpg')
     student_signature = models.FileField(upload_to='signatures/student/',default='file.jpg')
     father_signature = models.FileField(upload_to='signatures/father/',default='file.jpg')
     marksheet = models.FileField(upload_to='marksheet/', default='file.pdf')
@@ -50,7 +55,12 @@ class HostelData2(models.Model):
     Father_name = models.CharField(max_length=100)
     phone2 = models.IntegerField()
     Address2 = models.CharField(max_length=50)
-    
+
+    occupation = models.CharField(max_length=5)
+    shift = models.CharField(max_length=8)
+    Enroll = models.CharField(max_length=10)
+  
+    SPhoto = models.FileField(upload_to='3signatures/student/',default='file.jpg')
     student_signature = models.FileField(upload_to='2signatures/student/',default='file.jpg')
     father_signature = models.FileField(upload_to='2signatures/father/',default='file.jpg')
     marksheet1 = models.FileField(upload_to='2marksheet1/', default='file.pdf')
@@ -72,7 +82,7 @@ class HostelData3(models.Model):
     BGroup = models.CharField(max_length=4)
     phone1 = models.IntegerField()
     Address1 = models.CharField(max_length=50)
-    Email = models.EmailField(max_length=50)
+    Email = models.EmailField(max_length=50)    
 
     Branch = models.CharField(max_length=30)
     Backlog = models.CharField(max_length=3,default='YES')
@@ -82,7 +92,12 @@ class HostelData3(models.Model):
     Father_name = models.CharField(max_length=100)
     phone2 = models.IntegerField()
     Address2 = models.CharField(max_length=50)
-  
+
+    occupation = models.CharField(max_length=50)
+    shift = models.CharField(max_length=8)
+    Enroll = models.CharField(max_length=10)
+
+    SPhoto = models.FileField(upload_to='3signatures/student/',default='file.jpg')
     student_signature = models.FileField(upload_to='3signatures/student/',default='file.jpg')
     father_signature = models.FileField(upload_to='3signatures/father/',default='file.jpg')
     marksheet1 = models.FileField(upload_to='3marksheet1/', default='file.pdf')

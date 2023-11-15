@@ -1,19 +1,677 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(); /* Corrected the image file extension */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            text-align: center;
+            padding: 20px;
+            margin: 0; /* Remove default margin to ensure full background coverage */
+        }
+
+        /* First Header */
+        header {
+            background-color: #0077b6; /* Blue header color */
+            color: #ffffff; /* Text color for the header */
+            padding: 20px;
+            text-align: center;
+            margin-top: 2px; /* Add margin to move the header slightly lower */
+            height: 6px;
+        }
+        h1 {
+            font-size: 20px;
+            color: #333; /* Text color for the content */
+            margin-top: -10px;
+            margin-left: -750px;
+        }
+        /* Add styles for the image */
+        .logo {
+            position: absolute;
+            top: 80px; /* Adjust this value to position the image as desired */
+            left: 20px; /* Adjust this value to position the image as desired */
+            max-width: 350px; /* Set the maximum width for the image */
+            height: 90px;
+        }
+
+
+        /* Second Header */
+        .second-header {
+            background-color: #0077b6; /* Blue header color */
+            color: #FBFCF8; /* Text color for the header */
+            padding: 20px;
+            text-align: center;
+            height: 8px;
+            margin-top: 120px;
+        }
+
+        /* Style for text in the second header */
+        .second-header-text {
+            font-family: "Times New Roman", Times, serif; /* Set the font family to Times New Roman */
+            font-size: 35px; /* Adjust the font size as needed */
+            margin-top: -90px; /* Adjust the top margin to position the text vertically */
+            margin-left: 30px;
+        }
+
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.8); /* Adjust the last value (0.8) for the desired transparency level */
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            margin-top: 40px;
+            width: 500px;
+            height: 150px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 50px;
+            font-size: 20px;
+        }
+
+        select {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #0077b6;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 50px;
+        }
+
+        button:hover {
+            background-color: #005185;
+        }
+
+        /* Style for the image in the bottom right corner */
+        #bottom-right-image {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            margin-bottom: 20px; /* Adjust this value to control the distance from the bottom */
+            margin-right: 20px; /* Adjust this value to control the distance from the right */
+            max-width: 150px; /* Set the maximum width for the image */
+            height: auto; /* Automatically adjust the height to maintain aspect ratio */
+            z-index: 999; /* Set a higher z-index to ensure the image is on top of other content */
+        }
+
+
+
+
+        h1{
+        color: aqua;
+    }
+    .feed {
+        flex-basis: 65%;
+        }
+        .post {
+        background-color: #fff;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        align-items: center;
+        }
+        a{
+            text-decoration: none;
+            color: #04caa6;
+        }
+        .blk-btn{
+            padding-top:5%;
+            
+            width: 100%;
+            margin: 30px auto;
+            text-align: center;
+            border: 0%;
+            outline: none;
+        }
+        .final{
+            text-align: center;
+            color: black;
+        }
+
+
+
+
+        
+            table {
+                width: 400px; /* Set the table width */
+                border-collapse: collapse;
+                margin: 20px auto;
+            }
+    
+            th, td {
+                border: 1px solid black;
+                padding: 10px; /* Set cell padding */
+                text-align: center;
+            }
+    
+            input[type="number"] {
+                width: 100%; /* Set the width of the input field */
+                height: 100%;
+            }
+    
+            tr.large {
+                height: 40px; /* Set row height */
+            }
+
+
+
+            @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600&display=swap');
+
+            :root {
+                --main-color: #22BAA0;
+                --color-dark: #34425A;
+                --text-grey: #B0B0B0;
+            }
+            
+            * {
+                margin: 0;
+                padding: 0;
+                text-decoration: none;
+                list-style-type: none;
+                box-sizing: border-box;
+                font-family: 'Merriweather', sans-serif;
+            }
+            
+            #menu-toggle {
+                display: none;
+            }
+            
+            .sidebar {
+                position: fixed;
+                height: 100%;
+                width: 165px;
+                left: 0;
+                bottom: 0;
+                top: 0;
+                z-index: 100;
+                background: var(--color-dark);
+                transition: left 300ms;
+            }
+            
+            .side-header {
+                box-shadow: 0px 5px 5px -5px rgb(0 0 0 /10%);
+                background: var(--main-color);
+                height: 60px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .side-header h3, side-head span {
+                color: #fff;
+                font-weight: 400;
+            }
+            
+            .side-content {
+                height: calc(100vh - 60px);
+                overflow: auto;
+            }
+            
+            /* width */
+            .side-content::-webkit-scrollbar {
+              width: 5px;
+            }
+            
+            /* Track */
+            .side-content::-webkit-scrollbar-track {
+              box-shadow: inset 0 0 5px grey; 
+              border-radius: 10px;
+            }
+             
+            /* Handle */
+            .side-content::-webkit-scrollbar-thumb {
+              background: #b0b0b0; 
+              border-radius: 10px;
+            }
+            
+            /* Handle on hover */
+            .side-content::-webkit-scrollbar-thumb:hover {
+              background: #b30000; 
+            }
+            
+            .profile {
+                text-align: center;
+                padding: 2rem 0rem;
+            }
+            
+            .bg-img {
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-radius: 50%;
+                background-size: cover;
+            }
+            
+            .profile-img {
+                height: 80px;
+                width: 80px;
+                display: inline-block;
+                margin: 0 auto .5rem auto;
+                border: 3px solid #899DC1;
+            }
+            
+            .profile h4 {
+                color: #fff;
+                font-weight: 500;
+            }
+            
+            .profile small {
+                color: #899DC1;
+                font-weight: 600;
+            }
+            
+            
+            .side-menu ul {
+                text-align: center;
+            }
+            
+            .side-menu a {
+                display: block;
+                padding: 1.2rem 0rem;
+            }
+            
+            .side-menu a.active {
+                background: #2B384E;
+            }
+            
+            .side-menu a.active span, .side-menu a.active small {
+                color: #fff;
+            }
+            
+            .side-menu a span {
+                display: block;
+                text-align: center;
+                font-size: 1.7rem;
+            }
+            
+            .side-menu a span, .side-menu a small {
+                color: #899DC1;
+            }
+            
+            #menu-toggle:checked ~ .sidebar {
+                width: 60px;
+            }
+            
+            #menu-toggle:checked ~ .sidebar .side-header span {
+                display: none;
+            }
+            
+            #menu-toggle:checked ~ .main-content {
+                margin-left: 60px;
+                width: calc(100% - 60px);
+            }
+            
+            #menu-toggle:checked ~ .main-content header {
+                left: 60px;
+            }
+            
+            #menu-toggle:checked ~ .sidebar .profile,
+            #menu-toggle:checked ~ .sidebar .side-menu a small {
+                display: none;
+            }
+            
+            #menu-toggle:checked ~ .sidebar .side-menu a span {
+                font-size: 1.3rem;
+            }
+            
+            
+            .main-content {
+                margin-left: 165px;
+                width: calc(100% - 165px);
+                transition: margin-left 300ms;
+            }
+            
+            header {
+                position: fixed;
+                right: 0;
+                top: 0;
+                left: 165px;
+                z-index: 100;
+                height: 60px;
+                box-shadow: 0px 5px 5px -5px rgb(0 0 0 /10%);
+                background: #fff;
+                transition: left 300ms;
+            }
+            
+            .header-content, .header-menu {
+                display: flex;
+                align-items: center;
+            }
+            
+            .header-content {
+                justify-content: space-between;
+                padding: 0rem 1rem;
+            }
+            
+            .header-content label:first-child span {
+                font-size: 1.3rem;
+            }
+            
+            .header-content label {
+                cursor: pointer;
+            }
+            
+            .header-menu {
+                justify-content: flex-end;
+                padding-top: .5rem;
+            }
+            
+            
+            
+            
+            
+            main {
+                margin-top: 60px;
+            }
+            
+            .page-header {
+                padding: 1.3rem 1rem;
+                background: #E9edf2;
+                border-bottom: 1px solid #dee2e8;
+            }
+            
+            .page-header h1, .page-header small {
+                color: #74767d;
+            }
+            
+            .page-content {
+                padding: 1.3rem 1rem;
+                background: #f1f4f9;
+            }
+            
+            .analytics {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-gap: 2rem;
+                margin-top: .5rem;
+                margin-bottom: 2rem;
+            }
+            
+            .card {
+                box-shadow: 0px 5px 5px -5px rgb(0 0 0 / 10%);
+                background: #fff;
+                padding: 1rem;
+                border-radius: 3px;
+                margin-top: 30px;
+            }
+            
+            .card-head {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color:#899DC1;
+                border: 1px solid black;
+                color: #dee2e8;
+            }
+            
+            .card-head h1 {
+                color: wheat;
+                font-size: 1.8rem;
+                font-weight: 500;
+            }
+            
+            .card-head span {
+                font-size: 3.2rem;
+                color: var(--text-grey);
+            }
+            
+            .card-progress small {
+                color: #777;
+                font-size: .8rem;
+                font-weight: 600;
+            }
+            
+            .card-indicator {
+                margin: .7rem 0rem;
+                height: 10px;
+                border-radius: 4px;
+                background: #e9edf2;
+                overflow: hidden;
+            }
+            
+            
+            
+            
+            
+            
+            .table-responsive {
+                width: 100%;
+                overflow: auto;
+            }
+            
+            table {
+                border-collapse: collapse;
+            }
+            
+            table thead tr {
+                background: #e9edf2;
+            }
+            
+            table thead th {
+                padding: 1rem 0rem;
+                text-align: left;
+                color: #444;
+                font-size: .9rem;
+            }
+            
+            table thead th:first-child {
+                padding-left: 1rem;
+            }
+            
+            table tbody td {
+                padding: 1rem 0rem;
+                color: #444;
+            }
+            
+            table tbody td:first-child {
+                padding-left: 1rem;
+                color: var(--main-color);
+                font-weight: 600;
+                font-size: .9rem;
+            }
+            
+            table tbody tr {
+                border-bottom: 1px solid #dee2e8;
+            }
+
+
+            .registration_title
+            {
+                width: 100%;
+                height: 50px;
+                background-color: #0077B6;
+                color: #FFF;
+                font: 50px Calibri;
+                text-align: center;
+            }
+            
+            
+            
+            @media only screen and (max-width: 1200px) {
+                .analytics {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+            
+            @media only screen and (max-width: 768px) {
+                .analytics {
+                    grid-template-columns: 100%;
+                }
+                
+                .sidebar {
+                    left: -165px;
+                    z-index: 90;
+                }
+                
+                header {
+                    left: 0;
+                    width: 100%;
+                }
+                
+                .main-content {
+                    margin-left: 0;
+                    width: 100%;
+                }
+                
+                #menu-toggle:checked ~ .sidebar {
+                    left: 0;
+                }
+                
+                #menu-toggle:checked ~ .sidebar {
+                    width: 165px;
+                }
+            
+                #menu-toggle:checked ~ .sidebar .side-header span {
+                    display: inline-block;
+                }
+            
+                #menu-toggle:checked ~ .sidebar .profile,
+                #menu-toggle:checked ~ .sidebar .side-menu a small {
+                    display: block;
+                }
+            
+                #menu-toggle:checked ~ .sidebar .side-menu a span {
+                    font-size: 1.7rem;
+                }
+                
+                #menu-toggle:checked ~ .main-content header {
+                    left: 0px;
+                }
+                
+                table {
+                    width: 900px;
+                }
+            }
+
+
+    </style>
 </head>
 <body>
-    <form action="{% url 'close_form1' %}" method="post">
-        {% csrf_token %}
-        <label> Student_Form : </label><select name="student_access">
-            <option hidden>ON</option>
-            <option>ON</option>
-            <option>OFF</option>
-        </select>
-        <button>Submit</button>
-    </form>
+    <input type="checkbox" id="menu-toggle">
+    <div class="sidebar">
+        <div class="side-header">
+            <span><i class="las la-user-shield"></i></span>
+            <h3>A<span>dmin</span></h3>
+        </div>
+        
+        <div class="side-content">
+            <div class="profile">
+                <h4 style="font-family: Arial, Helvetica, sans-serif;"><b>FIRST YEAR STUDENTS<b></h4>
+            </div>
+
+            <div class="side-menu">
+                <ul>
+                    <li>
+                       <a href="{% url 'report1' %}" class="active">
+                            <span class="las la-home"></span>
+                            <small>Dashboard</small>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'close_form1' %}" class="active">
+                             <span class="las la-calendar"></span>
+                             <small>Form Disable/Enable</small>
+                         </a>
+                     </li>
+
+
+               
+             
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="main-content">
+        
+        <header>
+            <div class="header-content">
+                <label for="menu-toggle">
+                    <span class="las la-bars"></span>
+                </label>
+                
+                <div class="header-menu">
+                    
+                    <div class="user">
+                        <div class="bg-img" style="background-image: url(img/1.jpeg)"></div>
+                        
+                        <span class="las la-power-off"></span><a href="{% url 'logout' %}"><span>close</span></a>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            
+        </header>
+        
+        
+        <main>
+
+            
+      
+
+            
+            <div class="page-header">
+                <h1>Dashboard</h1>
+                <small>Home / Dashboard</small>
+            </div>
+            
+            <div class="page-content">
+
+                <form action="{% url 'close_form1' %}" method="post">
+                    {% csrf_token %}
+                    <label> Student_Form : </label><select name="student_access">
+                        <option hidden>ON</option>
+                        <option>ON</option>
+                        <option>OFF</option>
+                    </select>
+                    <button>Submit</button>
+                </form>
+            </div> 
+        </main>
+        
+    </div>
+
+
+
+
+
+    <!-- Add the image in the bottom right corner -->
+    <img src={% static "img/adm1.PNG" %} alt="Image" id="bottom-right-image">
+
+
 </body>
 </html>

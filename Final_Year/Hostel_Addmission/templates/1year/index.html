@@ -6,13 +6,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<style>
-    .doc{
-        display: flex;
-        flex-direction: column;
-        gap: 3%;
-    }
-</style>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #3498db; /* Blueish background color */
+            color: #fff;
+        }
+
+        form {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            color: #333;
+        }
+
+        h2 {
+            color: #3498db; /* Blue color for headings */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #3498db; /* Blue color for labels */
+        }
+
+        input,
+        select,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #3498db; /* Blue color for borders */
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .doc {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .doc label {
+            display: block;
+            text-align: center;
+            color: #3498db; /* Blue color for labels inside .doc */
+        }
+
+        .file-input {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .file-input input[type="file"] {
+            position: absolute;
+            font-size: 100px;
+            opacity: 0;
+            right: 0;
+            top: 0;
+        }
+
+        .file-input button {
+            border: none;
+            background-color: #3498db; /* Blue color for file input button */
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .file-input button:hover {
+            background-color: #2980b9; /* Slightly darker blue on hover */
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        @media (max-width: 600px) {
+            form {
+                margin: 10px;
+            }
+        }
+    </style>
 <body>
 
     <h2> First Year Students </h2>
@@ -21,6 +113,7 @@
         {% csrf_token %}
 
         <label> Name : </label><input type="text" name="name">
+        <label> Enroll : </label><input type="text" name="enroll">
         <label> DOB : </label><input type="date" name="DOB">
         <label>Cast : </label><select name="cast">
             <option hidden>Cast</option>
@@ -49,6 +142,10 @@
             <option>Electrical</option>
             <option>Mechatronics</option>
             <option>Mining</option>
+        </select><label>Shift : </label><select name="Shift">
+            <option hidden>Shift 1</option>
+            <option>Shift 1</option>
+            <option>Shift 2</option>
         </select>
         <div class="per">
         <h5> Class 10 </h5>
@@ -61,6 +158,7 @@
         <label> Name : </label><input type="text" name="fname">
         <label>Phone NO : </label><input type="number" name="fPhone">
         <label>Address : </label><input type="text" name="fAddress">
+        <label>Occupation : </label><input type="text" name="occupation">
 
         <h2> Undertaking's </h2>
 
@@ -88,6 +186,7 @@
 
         <h2> Documents </h2>
          <div class="doc">
+            <label> Student Passport Size photo  </label><input type="file" name="photo" required>
             <label> Your Signature  </label><input type="file" name="Signature">
             <label> Fther's Signature  </label><input type="file" name="fSignature">
             <label> 10th Marksheet  </label><input type="file" name="Marksheet2">

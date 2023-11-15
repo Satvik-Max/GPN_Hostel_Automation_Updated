@@ -6,6 +6,11 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
 </head>
 <style>
     h1{
@@ -26,61 +31,647 @@
             text-decoration: none;
             color: #04caa6;
         }
-        .opt{
-            display: flex;
-            flex-direction: row;
-            gap: 3%;
+        .blk-btn{
+            padding-top:5%;
+            
+            width: 100%;
+            margin: 30px auto;
+            text-align: center;
+            border: 0%;
+            outline: none;
         }
+        .final{
+            text-align: center;
+            color: black;
+        }
+
+
+
+
+        
+            table {
+                width: 400px; /* Set the table width */
+                border-collapse: collapse;
+                margin: 20px auto;
+            }
+    
+            th, td {
+                border: 1px solid black;
+                padding: 10px; /* Set cell padding */
+                text-align: center;
+            }
+    
+            input[type="number"] {
+                width: 100%; /* Set the width of the input field */
+                height: 100%;
+            }
+    
+            tr.large {
+                height: 40px; /* Set row height */
+            }
+
+
+
+            @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600&display=swap');
+
+            :root {
+                --main-color: #22BAA0;
+                --color-dark: #34425A;
+                --text-grey: #B0B0B0;
+            }
+            
+            * {
+                margin: 0;
+                padding: 0;
+                text-decoration: none;
+                list-style-type: none;
+                box-sizing: border-box;
+                font-family: 'Merriweather', sans-serif;
+            }
+            
+            #menu-toggle {
+                display: none;
+            }
+            
+            .sidebar {
+                position: fixed;
+                height: 100%;
+                width: 165px;
+                left: 0;
+                bottom: 0;
+                top: 0;
+                z-index: 100;
+                background: var(--color-dark);
+                transition: left 300ms;
+            }
+            
+            .side-header {
+                box-shadow: 0px 5px 5px -5px rgb(0 0 0 /10%);
+                background: var(--main-color);
+                height: 60px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .side-header h3, side-head span {
+                color: #fff;
+                font-weight: 400;
+            }
+            
+            .side-content {
+                height: calc(100vh - 60px);
+                overflow: auto;
+            }
+            
+            /* width */
+            .side-content::-webkit-scrollbar {
+              width: 5px;
+            }
+            
+            /* Track */
+            .side-content::-webkit-scrollbar-track {
+              box-shadow: inset 0 0 5px grey; 
+              border-radius: 10px;
+            }
+             
+            /* Handle */
+            .side-content::-webkit-scrollbar-thumb {
+              background: #b0b0b0; 
+              border-radius: 10px;
+            }
+            
+            /* Handle on hover */
+            .side-content::-webkit-scrollbar-thumb:hover {
+              background: #b30000; 
+            }
+            
+            .profile {
+                text-align: center;
+                padding: 2rem 0rem;
+            }
+            
+            .bg-img {
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-radius: 50%;
+                background-size: cover;
+            }
+            
+            .profile-img {
+                height: 80px;
+                width: 80px;
+                display: inline-block;
+                margin: 0 auto .5rem auto;
+                border: 3px solid #899DC1;
+            }
+            
+            .profile h4 {
+                color: #fff;
+                font-weight: 500;
+            }
+            
+            .profile small {
+                color: #899DC1;
+                font-weight: 600;
+            }
+            
+            
+            .side-menu ul {
+                text-align: center;
+            }
+            
+            .side-menu a {
+                display: block;
+                padding: 1.2rem 0rem;
+            }
+            
+            .side-menu a.active {
+                background: #2B384E;
+            }
+            
+            .side-menu a.active span, .side-menu a.active small {
+                color: #fff;
+            }
+            
+            .side-menu a span {
+                display: block;
+                text-align: center;
+                font-size: 1.7rem;
+            }
+            
+            .side-menu a span, .side-menu a small {
+                color: #899DC1;
+            }
+            
+            #menu-toggle:checked ~ .sidebar {
+                width: 60px;
+            }
+            
+            #menu-toggle:checked ~ .sidebar .side-header span {
+                display: none;
+            }
+            
+            #menu-toggle:checked ~ .main-content {
+                margin-left: 60px;
+                width: calc(100% - 60px);
+            }
+            
+            #menu-toggle:checked ~ .main-content header {
+                left: 60px;
+            }
+            
+            #menu-toggle:checked ~ .sidebar .profile,
+            #menu-toggle:checked ~ .sidebar .side-menu a small {
+                display: none;
+            }
+            
+            #menu-toggle:checked ~ .sidebar .side-menu a span {
+                font-size: 1.3rem;
+            }
+            
+            
+            .main-content {
+                margin-left: 165px;
+                width: calc(100% - 165px);
+                transition: margin-left 300ms;
+            }
+            
+            header {
+                position: fixed;
+                right: 0;
+                top: 0;
+                left: 165px;
+                z-index: 100;
+                height: 60px;
+                box-shadow: 0px 5px 5px -5px rgb(0 0 0 /10%);
+                background: #fff;
+                transition: left 300ms;
+            }
+            
+            .header-content, .header-menu {
+                display: flex;
+                align-items: center;
+            }
+            
+            .header-content {
+                justify-content: space-between;
+                padding: 0rem 1rem;
+            }
+            
+            .header-content label:first-child span {
+                font-size: 1.3rem;
+            }
+            
+            .header-content label {
+                cursor: pointer;
+            }
+            
+            .header-menu {
+                justify-content: flex-end;
+                padding-top: .5rem;
+            }
+            
+            
+            
+            
+            
+            main {
+                margin-top: 60px;
+            }
+            
+            .page-header {
+                padding: 1.3rem 1rem;
+                background: #E9edf2;
+                border-bottom: 1px solid #dee2e8;
+            }
+            
+            .page-header h1, .page-header small {
+                color: #74767d;
+            }
+            
+            .page-content {
+                padding: 1.3rem 1rem;
+                background: #f1f4f9;
+            }
+            
+            .analytics {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-gap: 2rem;
+                margin-top: .5rem;
+                margin-bottom: 2rem;
+            }
+            
+            .card {
+                box-shadow: 0px 5px 5px -5px rgb(0 0 0 / 10%);
+                background: #fff;
+                padding: 1rem;
+                border-radius: 3px;
+                margin-top: 30px;
+            }
+            
+            .card-head {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color:#899DC1;
+                border: 1px solid black;
+                color: #dee2e8;
+            }
+            
+            .card-head h1 {
+                color: wheat;
+                font-size: 1.8rem;
+                font-weight: 500;
+            }
+            
+            .card-head span {
+                font-size: 3.2rem;
+                color: var(--text-grey);
+            }
+            
+            .card-progress small {
+                color: #777;
+                font-size: .8rem;
+                font-weight: 600;
+            }
+            
+            .card-indicator {
+                margin: .7rem 0rem;
+                height: 10px;
+                border-radius: 4px;
+                background: #e9edf2;
+                overflow: hidden;
+            }
+            
+            
+            
+            
+            
+            
+            .table-responsive {
+                width: 100%;
+                overflow: auto;
+            }
+            
+            table {
+                border-collapse: collapse;
+            }
+            
+            table thead tr {
+                background: #e9edf2;
+            }
+            
+            table thead th {
+                padding: 1rem 0rem;
+                text-align: left;
+                color: #444;
+                font-size: .9rem;
+            }
+            
+            table thead th:first-child {
+                padding-left: 1rem;
+            }
+            
+            table tbody td {
+                padding: 1rem 0rem;
+                color: #444;
+            }
+            
+            table tbody td:first-child {
+                padding-left: 1rem;
+                color: var(--main-color);
+                font-weight: 600;
+                font-size: .9rem;
+            }
+            
+            table tbody tr {
+                border-bottom: 1px solid #dee2e8;
+            }
+
+
+            .registration_title
+            {
+                width: 100%;
+                height: 50px;
+                background-color: #0077B6;
+                color: #FFF;
+                font: 50px Calibri;
+                text-align: center;
+            }
+            
+            
+            
+            @media only screen and (max-width: 1200px) {
+                .analytics {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+            
+            @media only screen and (max-width: 768px) {
+                .analytics {
+                    grid-template-columns: 100%;
+                }
+                
+                .sidebar {
+                    left: -165px;
+                    z-index: 90;
+                }
+                
+                header {
+                    left: 0;
+                    width: 100%;
+                }
+                
+                .main-content {
+                    margin-left: 0;
+                    width: 100%;
+                }
+                
+                #menu-toggle:checked ~ .sidebar {
+                    left: 0;
+                }
+                
+                #menu-toggle:checked ~ .sidebar {
+                    width: 165px;
+                }
+            
+                #menu-toggle:checked ~ .sidebar .side-header span {
+                    display: inline-block;
+                }
+            
+                #menu-toggle:checked ~ .sidebar .profile,
+                #menu-toggle:checked ~ .sidebar .side-menu a small {
+                    display: block;
+                }
+            
+                #menu-toggle:checked ~ .sidebar .side-menu a span {
+                    font-size: 1.7rem;
+                }
+                
+                #menu-toggle:checked ~ .main-content header {
+                    left: 0px;
+                }
+                
+                table {
+                    width: 900px;
+                }
+            }
+        
 </style>
 <body>
-    <div style="margin-top: 2%;" ></div>
-    <a href="{% url 'search3' %}"><button style="margin-left: 50%;" class="btn btn-outline-success" type="submit">Search</button></a>
-    <div  class='ass' style="margin-bottom: 2%;"> 
+  
+
+    <input type="checkbox" id="menu-toggle">
+    <div class="sidebar">
+        <div class="side-header">
+            <span><i class="las la-user-shield"></i></span>
+            <h3>A<span>dmin</span></h3>
+        </div>
+        
+        <div class="side-content">
+            <div class="profile">
+                <h4 style="font-family: Arial, Helvetica, sans-serif;"><b>THIRD YEAR STUDENTS<b></h4>
+            </div>
+
+            <div class="side-menu">
+                <ul>
+                    <li>
+                       <a href="" class="active">
+                            <span class="las la-home"></span>
+                            <small>Dashboard</small>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'close_form' %}" class="active">
+                             <span class="las la-calendar"></span>
+                             <small>Admission Form Disable/Enable</small>
+                         </a>
+                     </li>
+
+
+                    <li>
+                       <a href="{% url 'up_date' %}" class="active">
+                            <span class="las la-calendar"></span>
+                            <small>Change Date</small>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'cimp33' %}" class="active">
+                             <span class="las la-calendar"></span>
+                             <small>Dates Disble/Enable</small>
+                         </a>
+                     </li>
+          
+                    <li>
+                       <a href="{% url 'addplist' %}" class="active">
+                            <span class="las la-file-upload"></span>
+                            <small>Upload Provisional List</small>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'cplist3' %}" class="active">
+                             <span class="las la-file-upload"></span>
+                             <small> Provisional_List Enable/Disable</small>
+                         </a>
+                     </li>
+                    <li>
+                       <a href="{% url 'addflist' %}" class="active">
+                            <span class="las la-link"></span>
+                            <small>Upload Final List</small>
+                        </a>
+                    </li>
+                    <li>
+                       <a href="{% url 'cflist3' %}" class="active">
+                            <span class="las la-link"></span>
+                            <small>Final_List Enable/Disable</small>
+                        </a>
+                    </li>
+             
+                </ul>
+            </div>
+        </div>
     </div>
 
-    <div class="opt">
-        <a href="{% url 'close_form' %}"><button style="margin-left: 90%;" type="button" class="btn btn-outline-dark"> Closee </button></a>
-        <div style="margin-left: 5%;" ></div>
-        <a href="{% url 'up_date' %}"><button style="margin-left: 90%;" type="button" class="btn btn-outline-dark"> Change_Date </button></a>
-        <a href="{% url 'cimp33' %}"><button style="margin-left: 90%;" type="button" class="btn btn-outline-dark"> ON/OFF </button></a>
-        <div style="margin-left: 5%;" ></div>
-        <a href="{% url 'addplist' %}"><button style="margin-left: 90%;" type="button" class="btn btn-outline-dark"> Provisional Update </button></a>
-        <a href="{% url 'cplist3' %}"><button style="margin-left: 90%;" type="button" class="btn btn-outline-dark"> ON/OFF </button></a>
-        <div style="margin-left: 5%;" ></div>
-        <a href="{% url 'addflist' %}"><button style="margin-left: 90%;" type="button" class="btn btn-outline-dark"> Final Update </button></a>
-        <a href="{% url 'cflist3' %}"><button style="margin-left: 90%;" type="button" class="btn btn-outline-dark"> ON/OFF </button></a>
-        <div style="margin-left: 5%;" ></div>        
-      </div>
 
-    <div style="padding-top: 2%;">
-        <a href="{% url 'Provisional_list3' %}">
-            <button class="btn btn-primary>">
-                Provisional List
-            </button>
-        </a>
-      </div>
-    <div class="div" style="padding-top: 5%;">
+
+
+
+
+    <div class="main-content">
+        
+        <header>
+            <div class="header-content">
+                <label for="menu-toggle">
+                    <span class="las la-bars"></span>
+                </label>
+                
+                <div class="header-menu">
+                    
+                    <div class="user">
+                        <div class="bg-img" style="background-image: url(img/1.jpeg)"></div>
+                        
+                        <span class="las la-power-off"></span><a href="{% url 'logout' %}"><span>close</span></a>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            
+        </header>
+        
+        
+        <main>
+
+            
+            <div style="margin-top: 7%;" ></div>
+            <a href="{% url 'search3' %}"><button style="margin-left: 50%;" class="btn btn-outline-success" type="submit">Search</button></a>
+            <div  class='ass' style="margin-bottom: 2%;"> 
+            </div>
+
+            
+            <div class="page-header">
+                <h1>Dashboard</h1>
+                <small>Home / Dashboard</small>
+            </div>
+            
+            <div class="page-content">
+            
+                <div class="analytics">
+                    {% for i in data %}
+                    <div class="shadow-none p-3 mb-5 bg-body-tertiary rounded"><a href="{% url 'admin_preview3' i.fno3 %}"><td>{{ i.name }}</td>
+                    </a></div>
+                  {% endfor %}   
+
+                </div>
+
+      
+            
+            </div>
+
+
+            <div class="blk-btn">
+                <a href="{% url 'Provisional_list3' %}">
+                    <button type="button" class="btn btn-primary btn-lg btn-block">
+                        Get Provisional Merit List
+                    </button>
+                </a>
+              </div>
+
+              
+      <div class="div" style="padding-top: 5%;">
+        <div class="registration_title">
+            <p style="margin: 0; padding-left: 20px;">
+                Get Final Merit List
+            </p>
+        </div>
+        <div class="final"><b><h1>  </h1></b></div>
+        
+        <form action="{% url 'report3' %}" method="post">
+          {% csrf_token %}
+          <div style="display: flex; flex-direction: column; size: 5%;">
+            <table>
+                <tr>
+                    <th>Catogory</th>
+                    <th>Seats</th>
+                </tr>
+                <tr class="large">
+                    <td>OPEN</td>
+                    <td><input type="number" value="0" min="0" name="OPENseats"></td>
+                </tr>
+                <tr class="large">
+                    <td>OBC</td>
+                    <td><input type="number" value="0" min="0" name="OBCseats"></td>
+                </tr>
+                <tr class="large">
+                    <td>SC</td>
+                    <td><input type="number" value="0" min="0" name="SCseats"></td>
+                </tr>
+                <tr class="large">
+                    <td>ST</td>
+                    <td><input type="number" value="0" min="0" name="STseats"></td>
+                </tr>
+                <tr class="large">
+                    <td>NT</td>
+                    <td><input type="number" value="0" min="0" name="NTseats"></td>
+                </tr>
+                <tr class="large">
+                    <td>SBC</td>
+                    <td><input type="number" value="0" min="0" name="SBCseats"></td>
+                </tr>
     
-      <h1> Get Final Merit List </h1>
-      <form action="{% url 'report3' %}" method="post">
-        {% csrf_token %}
-        <div style="display: flex; flex-direction: column; size: 5%;">
-            <label style="margin-left: 1%; margin-right: 1%;">OPEN Seats<input type="number" name="OPENseats"></label>
-            <label style="margin-left: 1%; margin-right: 1%;">OBC Seats<input type="number" name="OBCseats"></label>
-            <label style="margin-left: 1%; margin-right: 1%;">SC Seats<input type="number" name="SCseats"></label>
-            <label style="margin-left: 1%; margin-right: 1%;">ST Seats<input type="number" name="STseats"></label>
-            <label style="margin-left: 1%; margin-right: 1%;">NT Seats<input type="number" name="NTseats"></label>
-            <label style="margin-left: 1%; margin-right: 1%;">SBC Seats<input type="number" name="SBCseats"></label>
-            <label style="margin-left: 1%; margin-right: 1%;">Total Seats<input type="number" name="Tseats"></label>
-        </div>
-        <div>
-            <button style="margin-left: 40%;margin-bottom: 5%;">Submit</button>
-        </div>
-    </form>  
+                <tr class="large">
+                    <td>TOTAL</td>
+                    <td><input type="number" value="0" min="0" name="Tseats"></td>
+                </tr>
+            </table>
+          </div>
 
-     {% for i in data %}
-        <div class="shadow-none p-3 mb-5 bg-body-tertiary rounded"><a href="{% url 'admin_preview3' i.fno3 %}"><td>{{ i.name }}</td></a></div>
-      {% endfor %}          
+
+
+
+          <div>
+              <button style="margin-left: 40%;margin-bottom: 5%;"
+               class="btn btn-primary btn-lg btn-block">Submit</button>
+          </div>
+        </form>  
+            
+        </main>
+        
+    </div>
+    
+
+
+      
+
+  
+
+
 
 </body>
 </html>
