@@ -6,7 +6,7 @@
   <title>hostel admission</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <style>
       .HeaderColorDiv {
           /* background-color: #394b71; */
@@ -579,27 +579,9 @@
           align-items: center;
           background-size: 100% 100%;
           
-          background-image: url('static/img/g1.png');
+          background-image: url({% static 'img/g1.png' %});
           animation: changeImage 20s linear infinite;
       
-      }
-
-      @keyframes changeImage {
-          0%{
-              background-image: url('static/img/banner.png');
-          }
-          25%{
-              background-image: url( 'static/img/cafeteria.png');
-          }
-          50%{
-              background-image: url('static/img/library.png');
-          }
-          75%{
-              background-image: url('static/img/banner.png');
-          }
-          100%{
-              background-image: url('static/certificate.jpg');
-          }
       }
 
       .event-section{
@@ -915,10 +897,12 @@
 
       .staff-card {
           display: inline-block;
-          margin: 10px;
+          margin: 10px 10px 10px 10px;
           border: 1px solid #ccc;
           padding: 10px;
           text-align: center;
+          height: 300px;
+          width: 350px;
           transition: transform 0.3s;
       }
 
@@ -967,6 +951,7 @@
 
   .aboutus-container div, .aboutus-container img {
       width: 100%;
+
       float: none;
   }
 
@@ -981,7 +966,8 @@
   .gallery-container img {
       width: 85px;
       height: 80px;
-      margin: 3%;
+      margin: 15px 15px 15px 15px;
+      margin-top: 10px;
   }
 
   .footer-logo {
@@ -994,6 +980,14 @@
       text-align: center;
       
   }
+
+  .youtubevedio{
+    margin: 15px auto;
+  }
+  .youtubevedio embed{
+    margin: 40px 40px 40px 40px;
+  }
+
 
   .footer-section a{
       color: #fff;
@@ -1041,7 +1035,7 @@
                           <div class="headerribbon_content">
                               <div class="headerribbon">
                                   <div class="image1">
-                                      <img id="Image1" src="{% static 'img/gpn.jpg' %}" style="height:100px;">
+                                      <img id="Image1" src="{% static 'img/gpn_logo.jpg' %}" style="height:100px;">
                                   </div>
                                   <div class="headerribbon_title_text">
                                       <div>
@@ -1052,6 +1046,7 @@
                                           </svg>
                                         </a> </span>               
                                       </div>
+                                      
                                   </div>
                                 
                               </div>
@@ -1103,7 +1098,7 @@
           <div class="centermsgdiv">
               <span>
                   <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
-                   <img src="adt2/new.gif.png">
+                   <span><i class="fa-solid fa-bell"></i></span>
                       
                       Notification for HOSTEL ADMISSION ONLINE
                       2023 Schedule-I Start From
@@ -1146,11 +1141,13 @@
           <div>
               <h2 class="heading1">About Us</h2>
               <h4>Government Polytechnic nagpur</h4>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Natus molestias laudantium, eligendi odit harum vitae nulla est nihil rerum veniam
-                  aut amet voluptatem ullam temporibus quibusdam distinctio possimus aperiam quos.</p>
+              <p>
+                Established in 1914, Government Polytechnic Nagpur stands as the most esteemed institute in Nagpur,
+                 Maharashtra. With a rich legacy of over a century,  offering top-tier
+                  education and cementing its reputation as the best polytechnic institute in the state. Join us on a journey of 
+                  innovation and learning at the forefront of technical education</p>
           </div>
-          <img src="{% static 'img/banner.png' %}" alt="">
+          <img src="{% static 'img/clg1.png' %}" alt="">
       </div>
   </div>
 </div>
@@ -1174,21 +1171,22 @@
                   <h2 class="heading1">Our Staff</h2>
 
                   <div class="staff-card">
-                      <img class="staff-image" src="{% static 'img/user1.jpg' %}" alt="Staff 1">
-                      <div class="staff-name">John Doe</div>
-                      <div class="staff-post">Manager</div>
+                      <img class="staff-image" src="{% static 'img/daigavanesir.jpeg' %}" alt="Staff 1">
+                      <div class="staff-name">Dr. Manoj B. Daigavane</div>
+                      <div class="staff-post">Joint Director,<br>Regional Directorate of Technical Education,Nagpur<br>
+                        Principal,Government Polytechnic, Nagpur</div>
                   </div>
               
                   <div class="staff-card">
-                      <img class="staff-image" src="{% static 'img/user2.jpg' %}" alt="Staff 2">
-                      <div class="staff-name">Jane Smith</div>
-                      <div class="staff-post">Designer</div>
+                      <img class="staff-image" src="{% static 'img/bhadekarsir.png' %}" alt="Staff 2">
+                      <div class="staff-name">Prof.Lokesh L.Bhadekar</div>
+                      <div class="staff-post">Secretary,<br>Government Polytechnic Hostel,<br>Nagpur<br></div>
                   </div>
               
                   <div class="staff-card">
                       <img class="staff-image" src="{% static 'img/gpn.jpg' %}" alt="Staff 3">
-                      <div class="staff-name">Bob Johnson</div>
-                      <div class="staff-post">Developer</div>
+                      <div class="staff-name">Prof.Devendra Surkar</div>
+                      <div class="staff-post"> Joint Secretary,<br>Government Polytechnic Hostel,<br>Nagpur<br></div>
                   </div>
               </div>
           </div>
@@ -1211,22 +1209,56 @@
   <div class="event-section" style="background-color: #f0f3fa;">
       <div class="gallery-container">
               <h2 class="heading1">Gallery</h2>
-              <img src="{% static 'img/about.jpg' %}" alt="">
-              <img src="{% static 'img/banner2.jpg' %}" alt="">
-              <img src="{% static 'img/library.jpg' %}" alt=""> 
-              <img src="{% static 'img/about.jpg' %}" alt="">
-              <img src="{% static 'img/london.jpg' %}" alt="">
-              <img src="{% static 'img/newyork.png' %}" alt="">
-              <img src="{% static 'img/user2.jpg' %}" alt="">
-              <img src="{% static 'img/about.jpg' %}" alt="">
-              <img src="{% static 'img/team-1.jpg' %}" alt="">
+              <img src="{% static 'img/d2.jpg' %}" alt="">
+              <img src="{% static 'img/d1.jpg' %}" alt="">
+              <img src="{% static 'img/gp3.jpg' %}" alt=""> 
+              <img src="{% static 'img/gp4.jpg' %}" alt="">
+              <img src="{% static 'img/gp5.jpg' %}" alt="">
+              <img src="{% static 'img/gp6.jpg' %}" alt="">
+              <img src="{% static 'img/d3.webp' %}" alt="">
+              <img src="{% static 'img/d5.webp' %}" alt="">
+              <img src="{% static 'img/d4.jpg' %}" alt="">
             
               
       </div>
   </div>
 </div>
-
+<a class="button" style="margin-top: 15px; margin-left: 43%;" href="{% url 'HelpStudent' %}"><b>Help/Instructions</b></a>
+              
 <div class="stylecleardiv">
+</div>
+<div class="Height10pxdiv">
+</div>
+
+<div class="Height20pxdiv">
+</div>
+<div class="stylecleardiv">
+</div>
+<div class="Height10pxdiv">
+</div>
+
+<div class="Height20pxdiv">
+</div>
+
+<div align="center">
+  
+    <div class="event-section" style="background-color: #f0f3fa;">
+        <div class="youtubevedio">
+            <h2><b>A Perfect Hostel Tour Is Here!!</b></h2>
+              <embed contenteditable="true" style="width:720px;  height: 500px;" src="https://www.youtube.com/embed/dTQS32tPZy4"></embed>
+                
+        </div>
+    </div>
+  </div>
+  <div class="stylecleardiv">
+</div>
+<div class="Height10pxdiv">
+</div>
+
+<div class="Height20pxdiv">
+</div>
+
+  <div class="stylecleardiv">
 </div>
 <div class="Height10pxdiv">
 </div>
@@ -1240,7 +1272,7 @@
   <div class="footer">
       <div class="container">
           <div class="footer-section">
-              <img class="footer-logo" src="{% static 'img/gpn.jpg' %}" alt="">
+              <img class="footer-logo" src="{% static 'img/gpn_logo.jpg' %}" alt="">
           </div>
 
           <div class="footer-section">

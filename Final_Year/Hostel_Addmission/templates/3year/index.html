@@ -58,10 +58,12 @@
             text-align: center;
             color: #3498db; /* Blue color for labels inside .doc */
         }
+        /* Add the following styles to your existing CSS */
 
         .file-input {
             position: relative;
             overflow: hidden;
+            margin-bottom: 15px;
         }
 
         .file-input input[type="file"] {
@@ -70,21 +72,53 @@
             opacity: 0;
             right: 0;
             top: 0;
+            cursor: pointer;
         }
 
         .file-input button {
             border: none;
-            background-color: #3498db; /* Blue color for file input button */
+            background-color: #3498db;
             color: #fff;
             padding: 10px 15px;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
         .file-input button:hover {
-            background-color: #2980b9; /* Slightly darker blue on hover */
+            background-color: #2980b9;
         }
 
+        /* Style the label to make it visually appealing */
+        .file-input label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Add some styling to indicate the selected file */
+        .file-input .selected-file {
+            margin-top: 5px;
+            font-size: 12px;
+            color: #555;
+        }
+
+        /* Adjust the styling of the file input button */
+        .file-input input[type="file"] + button {
+            margin-top: 5px;
+            background-color: #3498db;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 3px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .file-input input[type="file"] + button:hover {
+            background-color: #2980b9;
+        }
         button {
             background-color: #4caf50;
             color: white;
@@ -170,27 +204,50 @@
         <h2> Undertaking's </h2>
 
         <pre>
-            adipisicing elit. Natus iusto cupiditate voluptatem consequatur 
-            ipsum dicta voluptas sint ratione, eius est deserunt sunt veritatis 
-            maiores modi quae animi asperiores. Repudiandae, ipsam.sit amet 
-            consectetur adipisicing elit. Fuga in, voluptatibus culpa nam aliquid 
-            ipsum delectus iste excepturi iusto deserunt!</pre>
+            Undertaking by the student
+            "I, _______________, hereby declare that I understand and accept the rules, regulations, and code of conduct set
+            forth by [Institution Name] for hostel residents. I solemnly undertake to abide by these regulations during my stay
+            at the hostel .I am aware tat any violation of these rules may lead to disciplinary action, which could result in 
+            expulsion from the hostel or the institution.  I pledge to contribute positively to the hostel community and uphold
+            the values of mutual respect, cooperation, and academic integrity.
+            
+            Undertaking about ragging 
+            "I, solemnly affirm and undertake that I shall uphold the dignity and integrity of [Institution Name]. 
+            I understand and acknowledge that ragging in any form is strictly prohibited within the premises of the
+            institution, including the hostel.I pledge to abide by the anti-ragging policies, rules, and regulations 
+            set forth by the institution."
+
+            undertaking about non-consumption of alcohol and drugs 
+            "I, hereby declare and undertake that I will refrain from the consumption of alcohol and illegal drugs
+            during my stay within the premises of hostel of Government Polytechnic, Nagpur. I understand that the 
+            consumption of alcohol and drugs is strictly prohibited and is against the rules and regulations of the
+            institution and the hostel.I pledge to comply with the policies set forth by the institution and understand
+            that any violation may result in disciplinary actions, including expulsion from the hostel or the institution
+        
+        </pre>
         <input type="checkbox" required>
         <label class="form-check-label" for="invalidCheck">
             Agree to terms and conditions
         </label>
 
         <pre>
-            adipisicing elit. Natus iusto cupiditate voluptatem consequatur 
-            ipsum dicta voluptas sint ratione, eius est deserunt sunt veritatis 
-            maiores modi quae animi asperiores. Repudiandae, ipsam.sit amet 
-            consectetur adipisicing elit. Fuga in, voluptatibus culpa nam aliquid 
-            ipsum delectus iste excepturi iusto deserunt!</pre>
+
+            I undertake fully responsibility for any misbehavior and act of
+            discipline of my son / daughter for which have no objection to 
+            remove him /her from the hostel without notice.
+
+            undertaking by parents about non consumption of alcohol and drugs by their ward in hostel 
+            "We, as parents/guardians , solemnly affirm and undertake that our ward will refrain from the consumption of alcohol
+            and illegal drugs during their stay within the premises of Government Polytechnic, Nagpur hostel.We agree that any 
+            violation of these guidelines may result in disciplinary actions against our ward, including possible expulsion from
+            the hostel or the institution.We pledge to cooperate with the institution's efforts to create a safe and conducive environment
+            for learning and personal development.
+        </pre>
         <input type="checkbox" required>
         <label class="form-check-label" for="invalidCheck">
             Agree to terms and conditions
         </label>
-
+        
         <h2>Documents</h2>
 
         <div class="doc">

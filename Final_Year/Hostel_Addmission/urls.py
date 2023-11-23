@@ -7,6 +7,10 @@ if student_access:
     urlpatterns = [
         path('',views.home,name='home'),
         path('Hostelview/',views.Hostellook,name='previewtab'),
+
+        path('HelpAdminPage/',views.HelpAdmin,name='HelpAdmin'),
+        path('HelpStudentPage/',views.HelpStudent,name='HelpStudent'),
+
         path('Admin_Login/',views.admin_log,name='admin_log'),
         path('logout/',views.logout,name='logout'),
         path('1stYear_Report/',views.Year1_report,name='report1'),

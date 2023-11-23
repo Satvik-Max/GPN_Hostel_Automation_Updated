@@ -25,6 +25,12 @@ file_path5 = os.path.join(settings.BASE_DIR, 'Hostel_Addmission\\templates\\ext_
 def home(request):
     return render(request , 'Home/index.html' )
 
+def HelpAdmin(request):
+    return render(request , 'Admin_OP/reports/help.html' )
+
+def HelpStudent(request):
+    return render(request , 'Home/help.html' )
+
 def firstyrdes(request):
     return render(request , 'Home/firstyeardes.html' )
 
@@ -305,7 +311,7 @@ def plistUP(request):
 def plistUP2(request):
     s = Lists.objects.get(k=101010)
     if request.method == 'POST':
-        p2 = request.FILES.get('p2')
+        p2 = request.FILES.get('p1')
         if p2:
             s.p2 = p2
         s.save()            
@@ -636,8 +642,8 @@ def Second_year(request):
             if registration:
                 h.Registration = registration
 
-            request.session['fno2'] = h.fno2
             h.save()
+            request.session['fno2'] = h.fno2
             em = EmailMessage()
             email_receiver=h.Email  
             email_sender="satwikbot3@gmail.com"
@@ -664,6 +670,7 @@ def Second_year_mining(request):
     if current_value == 'ON':
         if request.method == "POST":
             name = request.POST['name']
+            enroll = request.POST['enroll']
             Bdate = request.POST['DOB']
             cast = request.POST['cast']
             nationality = request.POST['nation']
@@ -672,6 +679,7 @@ def Second_year_mining(request):
             address = request.POST['add']
             email = request.POST['email']
             branch = request.POST['Branch']
+            Shift = request.POST['Shift']
             backlog = request.POST['Backlog']
             noBack = request.POST['noBack']
             obtain1 = int(request.POST['Obtained1']) 
@@ -685,7 +693,9 @@ def Second_year_mining(request):
             fname = request.POST['fname']
             fphone = request.POST['fPhone']
             faddress = request.POST['fAddress']
+            Occupation = request.POST['occupation']
 
+            P_photo = request.FILES.get('photo')
             Signature = request.FILES.get('Signature')
             fSignature = request.FILES.get('fSignature')
             Marksheet1 = request.FILES.get('Marksheet1')
@@ -719,6 +729,7 @@ def Second_year_mining(request):
             h = HostelData2()
             h.fno2 = '2320'+str(count)
             h.name = name
+            h.Enroll = enroll
             h.DOB = Bdate
             h.cast = cast
             h.nationality = nationality 
@@ -727,6 +738,7 @@ def Second_year_mining(request):
             h.Address1 = address
             h.Email = email
             h.Branch = branch
+            h.shift = Shift
             h.Backlog = backlog
             h.Nu_Backlog = noBack
             h.percentage = per
@@ -734,7 +746,10 @@ def Second_year_mining(request):
             h.Father_name = fname
             h.phone2 = fphone
             h.Address2 = faddress
+            h.occupation = Occupation
 
+            if P_photo:
+                h.SPhoto = P_photo
             if Signature:
                 h.student_signature = Signature
             if fSignature:
@@ -751,6 +766,7 @@ def Second_year_mining(request):
                 h.Registration = registration
 
             h.save()
+            request.session['fno2'] = h.fno2
             em = EmailMessage()
             email_receiver=h.Email  
             email_sender="satwikbot3@gmail.com"
@@ -1012,6 +1028,7 @@ def Third_yearmining(request):
             if request.method == "POST":
 
                 name = request.POST['name']
+                enroll = request.POST['enroll']
                 Bdate = request.POST['DOB']
                 cast = request.POST['cast']
                 nationality = request.POST['nation']
@@ -1020,6 +1037,7 @@ def Third_yearmining(request):
                 address = request.POST['add']
                 email = request.POST['email']
                 branch = request.POST['Branch']
+                Shift = request.POST['Shift']
                 backlog = request.POST['Backlog']
                 NumberBack = request.POST['noBack']
                 obtain1 = int(request.POST['Obtained1'])
@@ -1034,7 +1052,9 @@ def Third_yearmining(request):
                 fname = request.POST['fname']
                 fphone = request.POST['fPhone']
                 faddress = request.POST['fAddress']
+                Occupation = request.POST['occupation']
 
+                P_photo = request.FILES.get('photo')
                 Signature = request.FILES.get('Signature')
                 fSignature = request.FILES.get('fSignature')
                 Marksheet1 = request.FILES.get('Marksheet1')
@@ -1069,6 +1089,7 @@ def Third_yearmining(request):
                 h = HostelData3()
                 h.fno3 = '2330'+str(count)
                 h.name = name
+                h.Enroll = enroll
                 h.DOB = Bdate
                 h.cast = cast
                 h.nationality = nationality 
@@ -1077,13 +1098,16 @@ def Third_yearmining(request):
                 h.Address1 = address
                 h.Email = email
                 h.Branch = branch
+                h.shift = Shift
                 h.percentage = per
                 h.Backlog = backlog
                 h.Nu_Backlog = NumberBack
                 h.Father_name = fname
                 h.phone2 = fphone
                 h.Address2 = faddress
-
+                data.occupation = Occupation
+                if P_photo:
+                        h.SPhoto = P_photo
                 if Signature:
                     h.student_signature = Signature
                 if fSignature:

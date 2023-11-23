@@ -7,10 +7,102 @@
     <title>Document</title>
 </head>
 <style>
-    .doc{
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #3498db; /* Blueish background color */
+        color: #fff;
+    }
+
+    form {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        color: #333;
+    }
+
+    h2 {
+        color: #3498db; /* Blue color for headings */
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        color: #34dbb7; /* Blue color for labels */
+    }
+
+    input,
+    select,
+    button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #3498db; /* Blue color for borders */
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    .doc {
         display: flex;
-        flex-direction: column;
-        gap: 3%;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .doc label {
+        display: block;
+        text-align: center;
+        color: #34dbb7; /* Blue color for labels inside .doc */
+    }
+
+    .file-input {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .file-input input[type="file"] {
+        position: absolute;
+        font-size: 100px;
+        opacity: 0;
+        right: 0;
+        top: 0;
+    }
+
+    .file-input button {
+        border: none;
+        background-color: #499ed7; /* Blue color for file input button */
+        color: #fff;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .file-input button:hover {
+        background-color: #3c96d2; /* Slightly darker blue on hover */
+    }
+
+    button {
+        background-color: #4caf50;
+        color: white;
+        padding: 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    @media (max-width: 600px) {
+        form {
+            margin: 10px;
+        }
     }
 </style>
 <body>
@@ -21,6 +113,7 @@
         {% csrf_token %}
 
         <label> Name : </label><input type="text" name="name">
+        <label> Enroll : </label><input type="text" name="enroll">
         <label> DOB : </label><input type="date" name="DOB">
         <label> Cast : </label><select name="cast">
             <option hidden>Cast</option>
@@ -40,6 +133,10 @@
         <label>Branch : </label><select name="Branch">
             <option hidden>Mining</option>
             <option>Mining</option>
+        </select><label>Shift : </label><select name="Shift">
+            <option hidden>Shift 1</option>
+            <option>Shift 1</option>
+            <option>Shift 2</option>
         </select>
         <div class="per">
             <label>Any Backlog : </label><select name="Backlog">
@@ -58,33 +155,58 @@
         <label> Name : </label><input type="text" name="fname">
         <label>Phone NO : </label><input type="number" name="fPhone">
         <label>Address : </label><input type="text" name="fAddress">
+        <label>Occupation : </label><input type="text" name="occupation">
 
         <h2> Undertaking's </h2>
 
         <pre>
-            adipisicing elit. Natus iusto cupiditate voluptatem consequatur 
-            ipsum dicta voluptas sint ratione, eius est deserunt sunt veritatis 
-            maiores modi quae animi asperiores. Repudiandae, ipsam.sit amet 
-            consectetur adipisicing elit. Fuga in, voluptatibus culpa nam aliquid 
-            ipsum delectus iste excepturi iusto deserunt!</pre>
+            Undertaking by the student
+            "I, _______________, hereby declare that I understand and accept the rules, regulations, and code of conduct set
+            forth by [Institution Name] for hostel residents. I solemnly undertake to abide by these regulations during my stay
+            at the hostel .I am aware tat any violation of these rules may lead to disciplinary action, which could result in 
+            expulsion from the hostel or the institution.  I pledge to contribute positively to the hostel community and uphold
+            the values of mutual respect, cooperation, and academic integrity.
+            
+            Undertaking about ragging 
+            "I, solemnly affirm and undertake that I shall uphold the dignity and integrity of [Institution Name]. 
+            I understand and acknowledge that ragging in any form is strictly prohibited within the premises of the
+            institution, including the hostel.I pledge to abide by the anti-ragging policies, rules, and regulations 
+            set forth by the institution."
+
+            undertaking about non-consumption of alcohol and drugs 
+            "I, hereby declare and undertake that I will refrain from the consumption of alcohol and illegal drugs
+            during my stay within the premises of hostel of Government Polytechnic, Nagpur. I understand that the 
+            consumption of alcohol and drugs is strictly prohibited and is against the rules and regulations of the
+            institution and the hostel.I pledge to comply with the policies set forth by the institution and understand
+            that any violation may result in disciplinary actions, including expulsion from the hostel or the institution
+        
+        </pre>
         <input type="checkbox" required>
         <label class="form-check-label" for="invalidCheck">
             Agree to terms and conditions
         </label>
 
         <pre>
-            adipisicing elit. Natus iusto cupiditate voluptatem consequatur 
-            ipsum dicta voluptas sint ratione, eius est deserunt sunt veritatis 
-            maiores modi quae animi asperiores. Repudiandae, ipsam.sit amet 
-            consectetur adipisicing elit. Fuga in, voluptatibus culpa nam aliquid 
-            ipsum delectus iste excepturi iusto deserunt!</pre>
+
+            I undertake fully responsibility for any misbehavior and act of
+            discipline of my son / daughter for which have no objection to 
+            remove him /her from the hostel without notice.
+
+            undertaking by parents about non consumption of alcohol and drugs by their ward in hostel 
+            "We, as parents/guardians , solemnly affirm and undertake that our ward will refrain from the consumption of alcohol
+            and illegal drugs during their stay within the premises of Government Polytechnic, Nagpur hostel.We agree that any 
+            violation of these guidelines may result in disciplinary actions against our ward, including possible expulsion from
+            the hostel or the institution.We pledge to cooperate with the institution's efforts to create a safe and conducive environment
+            for learning and personal development.
+        </pre>
         <input type="checkbox" required>
         <label class="form-check-label" for="invalidCheck">
             Agree to terms and conditions
         </label>
-
+        
         <h2> Documents </h2>
          <div class="doc">
+            <label>Student Passport Size photo</label><input type="file" name="photo" required>
             <label> Your Signature  </label><input type="file" name="Signature">
             <label> Fther's Signature  </label><input type="file" name="fSignature">
             <label> II Year Marksheet </label><input type="file" name="Marksheet1">
