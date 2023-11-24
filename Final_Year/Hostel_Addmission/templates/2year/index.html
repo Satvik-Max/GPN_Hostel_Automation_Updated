@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -257,4 +257,1442 @@
 </script>
 {% endif %}
 
+</html> -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+    }
+
+    form {
+        max-width: 1030px;
+        margin: 20px auto;
+        margin-top: 40px;
+        background-color: aliceblue;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        color: #333;
+    }
+
+    h2 {
+        color: #3498db;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        color: #3498db;
+    }
+
+    input,
+    select,
+    button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #3498db;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    .doc {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .file-input {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .file-input input[type="file"] {
+        position: absolute;
+        font-size: 100px;
+        opacity: 0;
+        right: 0;
+        top: 0;
+    }
+
+    .file-input button {
+        border: none;
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .file-input button:hover {
+        background-color: #2980b9;
+    }
+
+    button {
+        background-color: #4caf50;
+        color: white;
+        padding: 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+.HeaderColorDiv {
+/* background-color: #394b71; */
+background-color: #0077b6;
+height: 30px;
+width: 1000px;
+/* background-image: linear-gradient(-90deg,#000080, #0077b6, green,yellow, orange); */
+}
+.width1000pxdiv {
+width: 100%;
+}
+.headerribbon_content {
+width: 100%;
+}
+.headerribbon {
+width: 100%;
+background-color: #FFF;
+display: flex;
+flex-direction: row;
+
+
+}
+.headerribbon_title_text {
+/* height: 100px; */
+display: flex;
+justify-content: center;
+align-items: center;
+/* float: left; */
+font-family: Georgia;
+font-size: min(38px, max(30px, 3vw));
+/* font: 3vw Georgia; */
+/* line-height: 100px; */
+color: #281d82;
+margin-left: 3%;
+}
+.image1{
+margin-left: 20%;
+padding: 10px auto;
+}
+
+.HeaderColorDiv {
+/* background-color: #394b71; */
+background-color: #0077b6;
+height: 30px;
+width: 1000px;
+/* background-image: linear-gradient(-90deg,#000080, #0077b6, green,yellow, orange); */
+}
+
+.body
+{
+background-image: url({% static 'img/bg1.png' %});  
+}
+.avoidclick
+{
+pointer-events: none;
+}
+.spacediv
+{
+height: 70px;
+width: 10px;
+background: #E6E6E6;
+}
+
+.btn
+{
+width: 135px;
+height: 40px;
+max-height: 40px;
+max-width: 150px; /* border: solid 2px #b62a26;     color: #b62a26; */
+border: solid 2px #0077B6;
+color: #0077B6;
+background: white;
+border-radius: 6px;
+cursor: pointer;
+font-family: Calibri;
+font-size: medium;
+margin-right: 20px;
+padding: 8px;
+}
+
+.btn:hover
+{
+border: solid 2px white;
+color: white; /background: #b62a26;/
+background: #0077B6;
+}
+
+.btnclick
+{
+width: 100px; /height: 25px;     max-height: 25px;     max-width: 150px;/ /* border: solid 2px #b62a26;     color: #b62a26; */
+border: solid 2px #0077B6;
+color: #0077B6;
+background: white;
+border-radius: 6px;
+cursor: pointer;
+font-family: Calibri;
+font-size: medium;
+margin-right: 20px;
+padding: 2px;
+}
+
+.btnclick:hover
+{
+border: solid 2px white;
+color: white; /background: #b62a26;/
+background: #0077B6;
+}
+
+
+
+.hplinkhome
+{
+color: white;
+text-decoration: none;
+font-weight: bold;
+font-size: 15px;
+position: relative;
+}
+
+.hplinkhome:hover
+{
+color: yellow;
+}
+
+
+.headingdivupdate
+{
+/background:#b62a26;/ /background:#73D674;/ /background: #0074b3;/
+background: white; /color: White;/
+color: black; /color:#145B9B;/
+font-size: min(max(1.4vw, 12px), 16px);
+font-family: Calibri;
+margin: 3px;
+border: 2px solid #00A4BE;
+font-weight: bold;
+border-radius: 6px;
+text-align: justify;
+padding-left: 20px;
+padding-right: 20px; 
+max-height:250px;
+
+}
+.headingdiv
+{
+text-align: center; /background:#b62a26;/ /background:#73D674;/
+background: #0074b3;
+color: White; /color:#145B9B;/
+font-size: large;
+font-family: Calibri;
+margin: 3px;
+border: 2px solid #00A4BE;
+font-weight: bold;
+border-radius: 6px;
+}
+.centermsgdiv
+{
+width: 1000px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+font-family: Calibri;
+padding-top: 10px;
+padding-bottom: 10px;
+background-color: white;
+font-size: medium;
+font-weight: bold;
+max-height: 70px;
+border-radius: 6px;
+border: 1px solid #0077b6;
+}
+
+.hoverdiv
+{
+font-family: Calibri;
+text-align: center;
+color: #b62a26;
+margin-top: 3px;
+margin-bottom: 3px;
+font-weight: bold;
+position: relative;
+text-decoration: none;
+}
+.hoverdivbar
+{
+font-family: Calibri;
+text-align: center;
+color: #0077b6;
+margin-top: 3px;
+margin-bottom: 3px;
+font-weight: bold;
+position: relative;
+text-decoration: none;
+}
+
+
+
+
+
+
+
+.HeaderColorDiv
+{
+/background-color:#394b71;/
+background-color: #0077b6;
+height: 30px;
+width: 1000px; /background-image: linear-gradient(-90deg,#000080, #0077b6, green,yellow, orange);/
+}
+
+.MenuItemDivbar
+{
+width: 490px;
+float: left;
+text-align: center;
+margin-right: 10px;
+background: white;
+font-family: Calibri;
+color: #0077b6;
+font-weight: bold;
+padding-top: 5px;
+padding-bottom: 5px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+position: relative; /pointer-events: none;/
+}
+.MenuItemDivbar:hover .NotificationSpan
+{
+/If you hover over the help icon, show the help_popup span/
+display: block;
+}
+.MenuItemLastDivbar
+{
+width: 490px;
+float: left;
+text-align: center;
+background: white;
+font-family: Calibri;
+color: #0077b6;
+font-weight: bold;
+padding-top: 5px;
+padding-bottom: 5px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+position: relative;
+}
+
+.MenuItemLastDivbar:hover .NotificationSpan
+{
+/If you hover over the help icon, show the help_popup span/
+display: block;
+}
+
+.MenuItemDivHome
+{
+width: 240px;
+float: left; /text-align: center;/
+border-bottom-color: #e6e6e6; /border-bottom-color:#FFD700;/
+border-bottom-style: solid;
+margin-left: 15px;
+margin-right: 10px;
+background: white;
+font-family: Calibri; /color:#b62a26;/
+color: #0077b6;
+font-weight: bold;
+padding-top: 5px;
+padding-bottom: 5px; /box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);/
+position: relative;
+top: 1px;
+left: -1px;
+border-bottom-style: solid; /border-bottom-color: inherit;/
+border-bottom-width: medium;
+}
+
+.MenuItemDivHome:hover .NotificationSpan
+{
+/If you hover over the help icon, show the help_popup span/
+display: block;
+left: 100px;
+}
+
+.MenuItemDivHomeLast
+{
+width: 240px;
+float: left; /text-align: center;/
+margin-left: 15px;
+margin-right: 10px;
+background: white;
+font-family: Calibri; /color:#b62a26;/
+color: #0077b6;
+font-weight: bold;
+padding-top: 5px;
+padding-bottom: 5px; /box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);/
+position: relative;
+top: 1px;
+left: -1px;
+}
+
+.MenuItemDivHomeLast:hover .NotificationSpan
+{
+/If you hover over the help icon, show the help_popup span/
+display: block;
+left: 100px;
+}
+
+.MenuItemDiv
+{
+width: 240px;
+float: left; /text-align: center;/
+margin-left: 15px;
+margin-right: 10px;
+background: white;
+font-family: Calibri; /color:#b62a26;/
+color: #0077b6;
+font-weight: bold;
+padding-top: 5px;
+padding-bottom: 5px; /box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);/
+position: relative;
+}
+
+.MenuItemLastDiv
+{
+width: 240px;
+float: left;
+text-align: center;
+background: white;
+font-family: Calibri;
+color: #b62a26;
+font-weight: bold;
+padding-top: 5px;
+padding-bottom: 5px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+position: relative;
+}
+
+.MenuItemDiv:hover .NotificationSpan
+{
+/If you hover over the help icon, show the help_popup span/
+display: block;
+left: 100px;
+}
+
+.MenuItemLastDiv:hover .NotificationSpan
+{
+/If you hover over the help icon, show the help_popup span/
+display: block;
+}
+
+.NotificationSpan
+{
+/Normally, hide this span/
+display: none;
+position: absolute;
+padding-top: 10px;
+padding-bottom: 10px;
+color: red;
+width: 240px; /text-align: center;/
+top: 30px;
+background: white;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+z-index: 99; /360px; is around the position I want/
+}
+
+.MenuSubitemHome
+{
+text-decoration: none;
+line-height: 30px; /color:#b62a26;/ /color:#8CC739;/
+color: #628b27;
+width: 240px;
+float: left;
+margin-left: 10px;
+}
+
+
+
+.MenuSubitem
+{
+text-decoration: none;
+line-height: 20px; /color:#b62a26;/ /color:#8CC739;/ /color: #628b27;/
+color: #0077b6;
+width: 240px;
+float: left;
+cursor: pointer; /leftbar/
+border-radius: 10px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+vertical-align: middle;
+text-align: center;
+font-weight: normal;
+padding-top: 5px;
+padding-bottom: 5px;
+}
+
+.ddl{
+    margin-top: 20px;
+    height: 25px;
+    width: 100%;
+    font-size: 15px;
+    border: 1px black solid;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.MenuSubitemBlue
+{
+text-decoration: none;
+line-height: 30px;
+color: Blue;
+width: 240px;
+}
+
+.MenuItemDiv:hover
+{
+/color:Black;/
+color: #628b27;
+}
+
+.MenuSubitem:hover
+{
+/color:Black;/ /color: #628b27;/
+background-color: #0077b6;
+color: yellow;
+}
+
+.Height5pxdiv
+{
+height: 5px;
+}
+
+.Height10pxdiv
+{
+height: 10px;
+}
+
+.Height20pxdiv
+{
+height: 20px;
+}
+
+.Height30pxdiv
+{
+height: 30px;
+}
+
+.Height40pxdiv
+{
+height: 40px;
+}
+
+.Height50pxdiv
+{
+height: 50px;
+width: 192px;
+}
+
+.Height60pxdiv
+{
+height: 60px;
+width: 192px;
+}
+
+.width5pxdiv
+{
+width: 5px;
+height: 12px;
+float: left;
+}
+
+.width10pxdiv
+{
+width: 10px;
+height: 12px;
+float: left;
+}
+.width20pxdiv
+{
+width: 20px;
+height: 12px;
+float: left;
+}
+.width1000pxdiv
+{
+width: 1000px;
+
+}
+
+.width1000pxdivcolornone
+{
+width: 1000px;
+height: auto;
+background-color: none;
+}
+
+.stylecleardiv
+{
+clear: both;
+height: 0px;
+}
+
+.spacebetweendiv
+{
+width: 10px;
+height: 1px;
+float: left;
+}
+
+
+
+/new css for left DIV Ends/
+
+/* Instructions CSS classes starts*/
+
+.headinstructions
+{
+background-color: #206ba4;
+color: white;
+height: 25px;
+width: 1000px;
+font-family: Calibri;
+font-weight: bold;
+text-align: center;
+}
+
+.instrctions
+{
+text-align: left;
+font-family: Calibri;
+font-size: medium;
+}
+
+.redinstrctions
+{
+text-align: left;
+font-family: Calibri;
+font-size: medium;
+color: Red;
+}
+
+
+.event-section{
+width: 1000px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.container
+{
+width: 100%;
+height: 100%;
+background-color: aliceblue;
+border-radius: 5px;
+position: relative;
+margin-top: 20px;
+overflow: hidden;
+
+}
+.container form tr
+{
+row-gap: 80px;
+margin-bottom: 80px;
+}
+
+
+
+.registration_title
+{
+width: 100%;
+height: 30px;
+background-color: #0077B6;
+color: #FFF;
+font: 25px Calibri;
+
+
+}
+
+.tbldata
+{
+text-align: left;
+}
+
+.content-wrapper
+{
+margin-top: 50px;
+}
+.doc{
+display: flex;
+flex-direction: column;
+gap: 3%;
+}
+
+
+
+
+form tr input{
+    margin: 15px 10px 10px 0px;
+    height: 25px;
+    width: 100%;
+    font-size: 15px;
+    border: 1px black solid;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+form tr select{
+    margin: 15px 10px 10px 0px;
+    height: 25px;
+    width: 100%;
+    font-size: 15px;
+    border: 1px black solid;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.ddl{
+    margin-top: 20px;
+    height: 25px;
+    width: 100%;
+    font-size: 13px;
+    border: 1px black solid;
+    border-radius: 5px;
+    padding: 2px;
+}
+form td{
+
+}
+
+.btn-box{
+
+width: 100%;
+margin: 30px auto;
+text-align: center;
+
+margin: 25px;
+
+font-size: 20px;
+font-family: Arial, Helvetica, sans-serif;
+padding: 7px 20px;
+border-radius: 5px;
+color: #fbfbfb;
+border: 0;
+cursor: pointer;
+
+
+
+}
+
+.genders {
+    display: flex;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 15px;
+    font-size: 15px;
+}
+
+.genders input {
+    width: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+form button{
+width: 110px;
+height: 35px;
+margin: 0 10px;
+background-color:rgb(27, 99, 155);
+cursor: pointer;
+
+
+
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 7px 20px;
+    border-radius: 5px;
+    color: #fbfbfb;
+    border: 0;
+    cursor: pointer;
+}
+
+form button:hover {
+    color: #3a3636;
+}
+
+.secondyear-form
+{
+width: 100%;
+height: 40px;
+background-color: #bddff2;
+color: #1919a2;
+text-align: center;
+}
+
+
+.body{
+
+}
+
+
+
+    @media (max-width: 600px) {
+        form {
+            margin: 10px;
+        }
+    }
+</style>
+<body>
+
+    <body class="body">
+
+        <div class="aspNetHidden">
+             <input type="hidden" name="_VIEWSTATE" id="_VIEWSTATE" value="/wEPDwUKMTY1NDU2MTA1MmRkbjd70GvCgYa1qGR9qPa5YVU5Ob5/RvTygev3Ex0QTSk=">
+             </div>
+             
+             <div class="aspNetHidden">
+             
+                 <input type="hidden" name="_VIEWSTATEGENERATOR" id="_VIEWSTATEGENERATOR" value="8D0E13E6">
+             </div>
+                     <div align="center">
+                         <div class="HeaderColorDiv">
+                         </div>
+                         <div class="width1000pxdiv">
+                             
+                             <div class="headerribbon_content">
+                                 <div class="headerribbon">
+                                     <div class="image1">
+                                         <img id="Image1" src="{% static 'img/gpn.jpg' %}" style="height:100px;">
+                                     </div>
+                                     <div class="headerribbon_title_text">
+                                         <div>
+                                             GPN Online Hostel Admision                
+                                         </div>
+                                     </div>
+                                   
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="HeaderColorDiv">
+                         </div>
+                     </div>
+     
+     
+     
+         <!--Test Menu Div Start-->
+         <div class="stylecleardiv">
+         </div>
+         <div align="center">
+             <div class="width1000pxdiv">
+     
+                 <div class="MenuItemDivbar">
+                   <a href="{% url 'home' %}">Home</a> 
+                 </div>
+                 
+     
+             </div>
+         </div>
+     
+     
+         <div class="stylecleardiv">
+         </div>
+         <div class="Height10pxdiv">
+         </div>
+     
+     
+     
+     
+     <div align="center">
+     
+     <div class="event-section">
+         
+         <div class="secondyear-form">
+             <p style="margin: 0; padding-left: 20px;">
+                 <h2> Second Year Students</h2>
+             </p>
+         </div>
+     <div class="container">
+         <form action="{% url 'Second_year' %}" method="post" enctype="multipart/form-data">
+             {% csrf_token %}
+     
+
+             <div class="content_wrapper">
+                <div class="instructions_ribbon">
+                    <ul>
+                        <li><b>Please go through the detailed notification and application submission instructions provided in the home page before submitting the application.</b></li>
+                        
+                    </ul>
+                </div> 
+                <div class="registration_title">
+                    <p style="margin: 0; padding-left: 20px;">
+                        STUDENT DETAILS
+                    </p>
+                </div>
+                <div class="registration_content">
+                    <table class="tbldata">
+                        
+                        <tr>
+                            <td>
+                                1. Student's Name (As per Marksheet) <span style="color: Red">
+                                    <sup><b>*</b></sup></span><br />
+                                <span style="font-size: 14px">Note: Any deviation may lead to the cancellation of candidature.</span>
+                            </td>
+                            <td>
+                                <input type="text" name="name" placeholder="Full Name" required>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                2. Enrollment Number  <span style="color: Red">
+                                    <sup><b>*</b></sup></span><br />
+                                <span style="font-size: 14px"></span>
+                            </td>
+                            <td>
+                                <input type="text" name="enroll" placeholder="Enrollment Number" required>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+    
+    
+                        <tr>
+                            <td>
+                                3. Date of Birth <span style="color: Red"><sup><b>*</b></sup></span>
+                            </td>
+                            <td>
+                                <input type="date" name="DOB" required>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+    
+    
+                        
+                        <tr>
+                            <td>
+                                4. Catogory <span style="color: Red"><sup><b>*</b></sup></span>
+                            </td>
+                            <td>
+                                <select name="cast" required>
+                                    <option hidden>Cast</option>
+                                    <option>SC</option>
+                                    <option>OBC</option>
+                                    <option>NT</option>
+                                    <option>ST</option>
+                                    <option>OPEN</option>
+                                    <option>SBC</option>
+                                </select>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+    
+    
+                        <tr>
+                            <td>
+                                5. Blood Group <span style="color: Red"><sup><b>*</b></sup></span>
+                            </td>
+                            <td>
+                                <input type="text" name="Bgroup" placeholder="Blood Group" required>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+    
+    
+                        <tr>
+                            <td>
+                                6. Nationality <span style="color: Red"><sup><b>*</b></sup></span>
+                            </td>
+                            <td>
+                                <input type="text" name="nation" placeholder="Nationality" required>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+    
+    
+                        <tr>
+                            <td>
+                                7. Mobile Number (Enter 10 Digit Mobile Number) 
+                                <span style="color: Red"><sup><b>*</b></sup></span>
+                            </td>
+                            <td>
+                                <input type="number" name="Number" placeholder="XXX XXX XXXX" required>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+    
+    
+                        <tr>
+                            <td>
+                                8. Email <span style="color: Red"><sup><b>*</b></sup></span>
+                            </td>
+                            <td>
+                                <input type="email" name="email" placeholder="abc@gmail.com" required>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+    
+    
+                        <tr>
+                            <td>
+                                9. ADDRESS <span
+                                    style="color: Red"><sup><b>*</b></sup></span>
+                            </td>
+                            <td>
+                                <input type="text" name="add" placeholder="Address" required>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+    
+    
+                    </table>
+                </div>
+
+
+
+                <div class="content-wrapper">
+                    <div class="registration_title">
+                        <p style="margin: 0; padding-left: 20px;">
+                            PARENTAL\GUARDIAN INFORMATION
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="regestration-content">
+                    <table>
+                        <tr>
+                            <td>
+                                1. Father Name (As per marksheet) <span style="color: Red">
+                                    <sup><b>*</b></sup></span><br />
+                            </td>
+                            <td>
+                                <input type="text" name="fname" placeholder="Father's Full Name" required>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                2. Mobile Number (Enter 10 Digit Mobile Number) 
+                                    <span style="color: Red"><sup><b>*</b></sup></span>
+                            </td>
+                            <td>
+                                <input type="number" name="fPhone" placeholder="Mobile Number" required>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+    
+    
+                        <tr>
+                            <td>
+                                3.Occupation<span style="color: Red">
+                                    <sup><b>*</b></sup></span><br />
+                            </td>
+                            <td>
+                                <input type="text" name="occupation" placeholder="Occupation" required>
+    
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+    
+    
+                        <tr>
+                            <td>
+                                4. ADDRESS <span
+                                style="color: Red"><sup><b>*</b></sup></span>
+                            </td>
+                            <td>
+                                <input type="text" name="fAddress" placeholder="Address" required>
+    
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+    
+                <div class="content-wrapper">
+                    <div class="registration_title">
+                        <p style="margin: 0; padding-left: 20px;">
+                            EDUCATIONAL DETAILS
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="regestration-content">
+                    <table>
+                        <tr>
+                            <td>
+                                1. Branch  <span style="color: Red">
+                                    <sup><b>*</b></sup></span><br />
+                            </td>
+                            <td>
+                                <select name="Branch" required>
+                                    <option hidden>Branch</option>
+                                    <option>Information Technology</option>
+                                    <option>Artificial Intelligence</option>
+                                    <option>computer</option>
+                                    <option>mechanical</option>
+                                    <option>civil</option>
+                                    <option>textile</option>
+                                    <option>Electronics</option>
+                                    <option>Electrical</option>
+                                    <option>Mechatronics</option>
+                                    <option>Mining</option>
+    
+                            </select>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+    
+    
+                        
+                        <tr>
+                            <td>
+                                2.Shift <span style="color: Red"><sup><b>*</b></sup></span>
+                            </td>
+                            <td>
+                                <select name="Shift" required>
+                                    <option >select</option>
+                                    <option>Shift 1</option>
+                                    <option>Shift 2</option>
+                                </select>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                3.Any Backlog <span style="color: Red"><sup><b>*</b></sup></span>
+                            </td>
+                            <td>
+                                <select name="Backlog" required>
+                                    <option hidden>NO</option>
+                                    <option>NO</option>
+                                    <option>YES</option>
+                                </select>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+    
+    
+                        <tr>
+                            <td>
+                                4.Number Of Backlog <span style="color: Red"><sup><b>*</b></sup></span>
+                            </td>
+                            <td>
+                                <input type="number" name="noBack" placeholder="NumberOfBacklog" required>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+    
+    
+                        <tr>
+                            <td>
+                                5. Marks Obtain In Semester 1                     <span style="color: Red"><sup><b>*</b></sup></span>
+                            </td>
+                            <td>
+                                <input type="number" name="Obtained1" placeholder="Marks Obtain" required>
+                            </td>
+                   
+                       
+            
+                        </tr>
+                 
+                        
+                        
+                        <tr>
+                            <td>
+                                  6.        outoff     <span style="color: Red"><sup><b>*</b></sup></span>          
+                            </td>
+                     
+                        
+                            <td><input type="number" name="Total1" placeholder="OutOff" required></td>
+            
+                        </tr>
+    
+    
+    
+                        <tr>
+                            <td>
+                                7. Marks Obtain In Semester 2                     <span style="color: Red"><sup><b>*</b></sup></span>
+                            </td>
+                            <td>
+                                <input type="number" name="Obtained2" placeholder="Marks Obtain" required>
+                            </td>
+                   
+                       
+            
+                        </tr>
+                 
+                        
+                        
+                        <tr>
+                            <td>
+                                  8.        outoff     <span style="color: Red"><sup><b>*</b></sup></span>          
+                            </td>
+                     
+                        
+                            <td><input type="number" name="Total2" placeholder="OutOff" required></td>
+            
+                        </tr>
+                    </table>
+    
+                </div>
+    
+                
+
+
+                <div class="content-wrapper">
+                    <div class="registration_title">
+                        <p style="margin: 0; padding-left: 20px;">
+                            UPLOAD DOCUMENTS
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="regestration-content">
+                    <table>
+                        <tr>
+                            <td>
+                                1. Students's Passport-Size Photo<span style="color: Red">
+                                    <sup><b>*</b></sup></span><br />
+                            </td>
+                            <td>
+                                <input type="file" name="photo" required>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                2.Students's Signature <span style="color: Red"><sup><b>*</b></sup></span>
+                            </td>
+                            <td>
+                                <input type="file" name="Signature" required>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                3.Father Signature<span style="color: Red"><sup><b>*</b></sup></span>
+                            </td>
+                            <td>
+                                <input type="file" name="fSignature" required>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+    
+    
+                        <tr>
+                            <td>
+                                4.SECOND SEM Marksheet  <span style="color: Red">
+                                    <sup><b>*</b></sup></span><br />
+                            </td>
+                            <td>
+                                <input type="file" name="Marksheet1" required>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                4.THIRD SEM Marksheet  <span style="color: Red">
+                                    <sup><b>*</b></sup></span><br />
+                            </td>
+                            <td>
+                                <input type="file" name="Marksheet2" required>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                                 <tr>
+                            <td>
+                                5.Allotment Letter<span style="color: Red"><sup><b>*</b></sup></span>
+                            </td>
+                            <td>
+                                <input type="file" name="Allotment" required>
+                            </td>
+            
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                6.Domecile Letter<span style="color: Red"><sup><b>*</b></sup></span>
+                            </td>
+                            <td>
+                                <input type="file" name="Domacile" required>
+                            </td>
+            
+                        </tr>
+    
+                
+    
+                        <tr>
+                            <td>
+                                7.Admission Receipt<span style="color: Red"><sup><b>*</b></sup></span>
+                            </td>
+                            <td>
+                                <input type="file" name="Addmission" required>
+                            </td>
+            
+                        </tr>
+    
+    
+    
+                        <tr>
+                            <td>
+                               8. Course Registration Receipt<span style="color: Red"><sup><b>*</b></sup></span>
+                            </td>
+                            <td>
+                                <input type="file" name="Registration" required>
+                            </td>
+            
+                        </tr>
+                    </table>
+    
+                </div>
+
+                
+            <div class="content-wrapper">
+                <div class="registration_title">
+                    <p style="margin: 0; padding-left: 20px;">
+                        UNDERTAKINGS
+                    </p>
+                </div>
+            </div>
+
+            <div class="regestration-content">
+                <table>
+                    <tr>
+                        <td>
+                          
+                            <pre>
+                                Undertaking by the student
+                                "I, _______________, hereby declare that I understand and accept the rules, regulations, and code of conduct set
+                                forth by [Institution Name] for hostel residents. I solemnly undertake to abide by these regulations during my stay
+                                at the hostel .I am aware tat any violation of these rules may lead to disciplinary action, which could result in 
+                                expulsion from the hostel or the institution.  I pledge to contribute positively to the hostel community and uphold
+                                the values of mutual respect, cooperation, and academic integrity.
+                    
+                                undertaking about non-consumption of alcohol and drugs 
+                                "I, hereby declare and undertake that I will refrain from the consumption of alcohol and illegal drugs
+                                during my stay within the premises of hostel of Government Polytechnic, Nagpur. I understand that the 
+                                consumption of alcohol and drugs is strictly prohibited and is against the rules and regulations of the
+                                institution and the hostel.I pledge to comply with the policies set forth by the institution and understand
+                                that any violation may result in disciplinary actions, including expulsion from the hostel or the institution
+                            
+                            </pre>
+                        </td>
+                        <td>
+                            <input type="checkbox" required><span>Agree to terms and conditions</span>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+<tr>
+
+</tr>
+
+
+                    <tr>
+                        <td>
+                            
+                            <pre>
+
+                                I undertake fully responsibility for any misbehavior and act of
+                                discipline of my son / daughter for which have no objection to 
+                                remove him /her from the hostel without notice.
+                    
+                                undertaking by parents about non consumption of alcohol and drugs by their ward in hostel 
+                                "We, as parents/guardians , solemnly affirm and undertake that our ward will refrain from the consumption of alcohol
+                                and illegal drugs during their stay within the premises of Government Polytechnic, Nagpur hostel.We agree that any 
+                                violation of these guidelines may result in disciplinary actions against our ward, including possible expulsion from
+                                the hostel or the institution.We pledge to cooperate with the institution's efforts to create a safe and conducive environment
+                                for learning and personal development.
+                            </pre>
+                        </td>
+                        <td>
+                            <input type="checkbox" required><span>Agree to terms and conditions</span>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+
+
+                <button> Submit </button>
+
+    </form>
+
+    <label>  GOVERNMENT POLYTECHNIC NAGPUR </label>
+
+</body>
+{% if msg %}
+<script>
+    alert("{{ msg }}");
+</script>
+{% endif %}
 </html>
